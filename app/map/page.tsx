@@ -45,18 +45,20 @@ export default function MapPage() {
       <section className="container mx-auto max-w-6xl px-4 py-10">
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
-              <iframe
-                src={MAP_EMBED_SRC}
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Dr. Muller Dentistry location on Google Maps"
-                className="min-h-[320px] w-full"
-              />
+            <div className="group overflow-hidden rounded-[2rem] border border-primary/20 shadow-2xl bg-card/60 backdrop-blur-md p-2">
+              <div className="overflow-hidden rounded-[1.5rem]">
+                <iframe
+                  src={MAP_EMBED_SRC}
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Dr. Muller Dentistry location on Google Maps"
+                  className="w-full grayscale-[20%] contrast-125 transition-all duration-700 group-hover:grayscale-0"
+                />
+              </div>
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-4">
               <a
@@ -76,64 +78,56 @@ export default function MapPage() {
           </div>
 
           <div className="space-y-6 lg:col-span-2">
-            <Card className="border-primary/20 bg-primary/5">
-              <CardHeader>
-                <h2 className="flex items-center gap-2 text-lg font-semibold text-foreground">
-                  <Star className="size-5 fill-amber-400 text-amber-400" aria-hidden />
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-primary/20 bg-card/60 p-8 shadow-xl backdrop-blur-md transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-50 pointer-events-none"></div>
+
+              <div className="relative z-10 flex-1">
+                <h2 className="flex items-center gap-2 text-2xl font-extrabold text-foreground">
+                  <Star className="size-7 fill-amber-400 text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]" aria-hidden />
                   Google Reviews
                 </h2>
-                <p className="text-sm text-muted-foreground">
-                  See what patients are saying about us. Your feedback helps others find great care.
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  See what patients are saying about us on Google. Your feedback continually helps others find great care in St. John's.
                 </p>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-3">
-                <Button asChild className="bg-primary hover:bg-primary/90">
-                  <a
-                    href={SITE.googleReviewsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View on Google
-                    <ExternalLink className="size-4" aria-hidden />
+              </div>
+
+              <div className="relative z-10 mt-8 flex flex-col gap-4">
+                <Button asChild size="lg" className="rounded-full shadow-lg shadow-primary/20 h-12 w-full text-base font-semibold">
+                  <a href={SITE.googleReviewsUrl} target="_blank" rel="noopener noreferrer">
+                    View on Google <ExternalLink className="ml-2 size-4" aria-hidden />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="sm">
-                  <a
-                    href={SITE.googleReviewsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Leave a review on Google"
-                  >
-                    <MessageCircle className="size-4" aria-hidden />
+                <Button asChild variant="outline" size="lg" className="rounded-full bg-background/50 h-12 w-full text-base backdrop-blur-sm border-primary/20 hover:bg-primary/5">
+                  <a href={SITE.googleReviewsUrl} target="_blank" rel="noopener noreferrer" aria-label="Leave a review on Google">
+                    <MessageCircle className="mr-2 size-4" aria-hidden />
                     Leave a review
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-primary/20 bg-primary/5">
-              <CardHeader>
-                <h2 className="flex items-center gap-2 text-lg font-semibold text-foreground">
-                  <Instagram className="size-5" aria-hidden />
-                  Follow on Instagram
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-primary/20 bg-card/60 p-8 shadow-xl backdrop-blur-md transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-transparent opacity-50 pointer-events-none"></div>
+
+              <div className="relative z-10 flex-1">
+                <h2 className="flex items-center gap-2 text-2xl font-extrabold text-foreground">
+                  <Instagram className="size-7 text-pink-500 drop-shadow-[0_0_10px_rgba(236,72,153,0.5)]" aria-hidden />
+                  Follow Our Journey
                 </h2>
-                <p className="text-sm text-muted-foreground">
-                  Smiles, tips, and updates from the practice.
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  Join our amazing community. Connect with us for smiles, dental tips, and updates straight from the practice.
                 </p>
-              </CardHeader>
-              <CardContent>
-                <Button asChild variant="outline" className="w-full gap-2">
-                  <a
-                    href={SITE.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram className="size-5" aria-hidden />
+              </div>
+
+              <div className="relative z-10 mt-8">
+                <Button asChild variant="outline" size="lg" className="w-full h-12 text-base rounded-full bg-background/50 backdrop-blur-sm border-pink-500/20 hover:bg-pink-500/10 hover:text-pink-600 transition-colors">
+                  <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer">
+                    <Instagram className="mr-2 size-5" aria-hidden />
                     @drmullerdentistry
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
