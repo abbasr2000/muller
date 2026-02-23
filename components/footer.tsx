@@ -5,7 +5,7 @@ import { SITE, NAV_MAIN, SERVICES } from "@/lib/site-config";
 
 export const Footer = () => {
   return (
-    <footer className="relative border-t border-primary/10 bg-background overflow-hidden">
+    <footer className="relative border-t border-primary/10 bg-background overflow-hidden pb-20 md:pb-0">
       <div className="absolute top-0 left-1/2 -px-1/2 h-[1px] w-3/4 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       <div className="absolute bottom-0 right-0 -z-10 size-[400px] translate-y-1/2 translate-x-1/2 bg-primary/5 rounded-full blur-[100px]"></div>
 

@@ -33,12 +33,7 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact | Dr. Muller Dentistry St. John's NL",
-    description: "Contact Dr. Muller Dentistry in St. John's, Newfoundland. Book root canal, cleanings, and dental appointments.",
-    images: ["/contact-page-hero.png"],
-  },
+
 };
 
 export default function ContactPage() {

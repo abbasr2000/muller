@@ -95,7 +95,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10 pointer-events-none"></div>
               <Image
                 src="/root-canal-hero.png"
-                alt="Advanced Root Canal Therapy"
+                alt="Root Canal Therapy at Dr. Muller Dentistry"
                 width={800}
                 height={800}
                 className="object-cover w-full h-auto transform transition-transform duration-1000 group-hover:scale-105"
@@ -103,7 +103,7 @@ export default function HomePage() {
               <div className="absolute bottom-6 left-6 z-20">
                 <div className="inline-flex items-center gap-2 rounded-full bg-background/80 backdrop-blur-md px-4 py-2 text-sm font-semibold text-foreground shadow-lg">
                   <span className="size-2 rounded-full bg-primary animate-pulse" />
-                  Advanced Treatment
+                  Root Canal Therapy
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function HomePage() {
                   A Core Focus
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                  We provide advanced root canal treatment to save your natural teeth and
+                  We provide root canal treatment to save your natural teeth and
                   relieve pain. Our modern, patient-first approach ensures the procedure is
                   surprisingly comfortable and highly efficient.
                 </p>
@@ -155,7 +155,7 @@ export default function HomePage() {
             All Dental Services
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From routine checkups to advanced implants, we offer a full range of treatments in St.
+            From routine checkups to implants, we offer a full range of treatments in St.
             John&apos;s.
           </p>
         </div>

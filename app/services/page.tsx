@@ -35,12 +35,7 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dental Services | Dr. Muller Dentistry St. John's NL",
-    description: "Full range of dental services in St. John's, Newfoundland.",
-    images: ["/services-hero.png"],
-  },
+
 };
 
 export default function ServicesPage() {

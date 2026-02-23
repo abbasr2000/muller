@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dental Implants | Dr. Muller Dentistry",
-    description: "The gold-standard, permanent tooth replacement that looks and feels totally natural.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

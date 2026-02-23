@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cosmetic Dentistry | Dr. Muller Dentistry",
-    description: "Professional whitening, custom veneers, and total smile makeovers in St. John's.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Crowns & Bridges | Dr. Muller Dentistry",
-    description: "Restore structural strength and visual appearance with custom crowns and bridges.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

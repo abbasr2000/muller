@@ -4,6 +4,7 @@ import { Toaster } from "sonner";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
+import { MobileCallBar } from "@/components/mobile-call-bar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,7 +39,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Dr. Muller Dentistry | St. John's NL | Root Canal & Dental Care",
-    description: "Dr. Muller Dentistry in St. John's, Newfoundland. Expert root canal therapy, general dentistry, cleanings, and full dental care. 386 Stavanger Dr, St. John's NL.",
+    description:
+      "Dr. Muller Dentistry in St. John's, Newfoundland. Expert root canal therapy, general dentistry, cleanings, and full dental care. 386 Stavanger Dr, St. John's NL.",
     url: "https://drmullerdentistry.com",
     siteName: "Dr. Muller Dentistry",
     locale: "en_CA",
@@ -52,12 +54,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dr. Muller Dentistry | St. John's NL",
-    description: "Expert root canal therapy, general dentistry, cleanings, and full dental care in St. John's, NL.",
-    images: ["/front-page-hero-2.png"],
-  },
+
   robots: {
     index: true,
     follow: true,
@@ -81,9 +78,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        {/* Skip to content — WCAG AA accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-6 focus:py-3 focus:text-primary-foreground focus:shadow-lg focus:text-sm focus:font-semibold"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
+        <MobileCallBar />
         <Toaster position="top-center" richColors />
       </body>
     </html>

@@ -154,12 +154,6 @@ export const metadata: Metadata = {{
       }}
     ],
   }},
-  twitter: {{
-    card: "summary_large_image",
-    title: "{title} | Dr. Muller Dentistry",
-    description: "{desc}",
-    images: ["/services-hero.png"],
-  }},
 }};
 
 export default function ServicePage() {{

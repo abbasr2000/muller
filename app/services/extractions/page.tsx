@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tooth Extractions | Dr. Muller Dentistry",
-    description: "Safe, painless, and highly comfortable extractions when a tooth simply cannot be saved.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Fillings | Dr. Muller Dentistry",
-    description: "Invisible, tooth-colored composite resin fillings to beautifully restore teeth affected by decay.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

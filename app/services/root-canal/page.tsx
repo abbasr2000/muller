@@ -34,12 +34,7 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Root Canal Therapy | Dr. Muller Dentistry",
-    description: "Expert root canal treatment in St. John's, Newfoundland.",
-    images: ["/root-canal-hero.png"],
-  },
+
 };
 
 export default function RootCanalPage() {
@@ -149,7 +144,7 @@ export default function RootCanalPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="max-w-2xl">
               <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
-                Advanced Treatment
+                Our Focus
               </div>
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
                 Root Canal Therapy
@@ -165,7 +160,7 @@ export default function RootCanalPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent mix-blend-overlay z-10 pointer-events-none transition-opacity duration-700 group-hover:opacity-70"></div>
               <Image
                 src="/root-canal-hero.png"
-                alt="Advanced Root Canal Therapy"
+                alt="Root Canal Therapy at Dr. Muller Dentistry"
                 width={800}
                 height={800}
                 className="object-cover w-full h-auto transform transition-transform duration-1000 group-hover:scale-105"

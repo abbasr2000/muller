@@ -38,12 +38,7 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Map & Reviews | Dr. Muller Dentistry St. John's NL",
-    description: "Find Dr. Muller Dentistry on the map. Read Google reviews and follow us on Instagram.",
-    images: ["/front-page-hero-2.png"],
-  },
+
 };
 
 // Google Maps embed - shows the map with the place marked

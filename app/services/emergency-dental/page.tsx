@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Emergency Dental Care | Dr. Muller Dentistry",
-    description: "Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

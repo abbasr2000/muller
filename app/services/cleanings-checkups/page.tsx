@@ -26,12 +26,6 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cleanings & Checkups | Dr. Muller Dentistry",
-    description: "Professional cleanings and comprehensive dental exams to keep your smile healthy.",
-    images: ["/services-hero.png"],
-  },
 };
 
 export default function ServicePage() {

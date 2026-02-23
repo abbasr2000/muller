@@ -33,12 +33,7 @@ export const metadata: Metadata = {
       }
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Dr. Muller | Dentist St. John's Newfoundland",
-    description: "Meet Dr. David Muller, DDS – University of Toronto trained, ICOI & AAIP Fellow.",
-    images: ["/dr-muller.png"],
-  },
+
 };
 
 export default function AboutPage() {
