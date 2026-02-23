@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Cleanings & Checkups | St. John's NL | Dr. Muller Dentistry",
   description: "Professional cleanings and comprehensive dental exams to keep your smile healthy.",
-  keywords: ["Cleanings & Checkups St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Cleanings & Checkups St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Cleanings & Checkups"],
+  alternates: {
+    canonical: "/services/cleanings-checkups",
+  },
+  openGraph: {
+    title: "Cleanings & Checkups | Dr. Muller Dentistry",
+    description: "Professional cleanings and comprehensive dental exams to keep your smile healthy.",
+    url: "https://drmullerdentistry.com/services/cleanings-checkups",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Cleanings & Checkups at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cleanings & Checkups | Dr. Muller Dentistry",
+    description: "Professional cleanings and comprehensive dental exams to keep your smile healthy.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "How often should I get a dental cleaning?", "acceptedAnswer": {"@type": "Answer", "text": "For a majority of our patients, we strongly recommend a professional cleaning and checkup every 6 months. However, if you have a history of active gum disease, orthodontic braces, or other specific medical conditions, we may suggest visiting every 3 to 4 months for optimal care."}}, {"@type": "Question", "name": "Does a dental cleaning hurt?", "acceptedAnswer": {"@type": "Answer", "text": "A routine dental cleaning is typically painless and very well-tolerated. If you have highly sensitive teeth, sensitive gums, or dental anxiety, please let our team know ahead of time! We can apply a numbing gel or take extra gentle care to ensure you are 100% comfortable."}}, {"@type": "Question", "name": "Will X-rays be taken during my checkup?", "acceptedAnswer": {"@type": "Answer", "text": "We generally recommend updating your diagnostic dental X-rays once a year to check for hidden decay between tight teeth or issues deep below the gumline. If you are a brand new patient, we will likely take a full set of X-rays to establish a comprehensive baseline of your oral health."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Cleanings & Checkups",
+        "item": "https://drmullerdentistry.com/services/cleanings-checkups"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Cleanings & Checkups",
+    "description": "Professional cleanings and comprehensive dental exams to keep your smile healthy.",
+    "url": "https://drmullerdentistry.com/services/cleanings-checkups",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Cleanings & Checkups",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">

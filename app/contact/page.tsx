@@ -8,12 +8,37 @@ import { SITE } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Contact | Book an Appointment St. John's NL",
   description: `Contact Dr. Muller Dentistry in St. John's, Newfoundland. Address: ${SITE.address}. Book root canal, cleanings, and dental appointments. ${SITE.phone}.`,
+  alternates: {
+    canonical: "/contact",
+  },
   keywords: [
     "contact Dr. Muller Dentistry",
     "dentist St. John's",
     "book dentist Newfoundland",
     "St. John's NL dental appointment",
   ],
+  openGraph: {
+    title: "Contact | Dr. Muller Dentistry St. John's NL",
+    description: "Contact Dr. Muller Dentistry in St. John's, Newfoundland. Book root canal, cleanings, and dental appointments.",
+    url: "https://drmullerdentistry.com/contact",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/contact-page-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Dr. Muller Dentistry St. John's NL",
+    description: "Contact Dr. Muller Dentistry in St. John's, Newfoundland. Book root canal, cleanings, and dental appointments.",
+    images: ["/contact-page-hero.png"],
+  },
 };
 
 export default function ContactPage() {

@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Crowns & Bridges | St. John's NL | Dr. Muller Dentistry",
   description: "Restore structural strength and visual appearance with custom crowns and bridges.",
-  keywords: ["Crowns & Bridges St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Crowns & Bridges St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Crowns & Bridges"],
+  alternates: {
+    canonical: "/services/crowns-bridges",
+  },
+  openGraph: {
+    title: "Crowns & Bridges | Dr. Muller Dentistry",
+    description: "Restore structural strength and visual appearance with custom crowns and bridges.",
+    url: "https://drmullerdentistry.com/services/crowns-bridges",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Crowns & Bridges at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crowns & Bridges | Dr. Muller Dentistry",
+    description: "Restore structural strength and visual appearance with custom crowns and bridges.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "How long does it take to get a crown or a bridge?", "acceptedAnswer": {"@type": "Answer", "text": "The standard process typically requires two focused visits. During your first visit, the target teeth are prepared, precise digital or physical impressions are taken, and a protective temporary restoration is placed. Your custom-milled crown or bridge will be permanently cemented during your second visit, usually about two weeks later."}}, {"@type": "Question", "name": "How long do crowns and bridges usually last?", "acceptedAnswer": {"@type": "Answer", "text": "With excellent oral hygiene at home and regular professional dental checkups, high-quality ceramic crowns and bridges can last 10 to 15 years, and very often much longer. They do not naturally decay, but the natural tooth structure holding them still can, which is why brushing is vital!"}}, {"@type": "Question", "name": "Does getting a crown hurt?", "acceptedAnswer": {"@type": "Answer", "text": "Getting a crown is a very routine procedure that is performed under profound local anesthesia. Your tooth and the surrounding gums will be completely numb, making the experience very similar to getting a standard filling in terms of absolute comfort."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Crowns & Bridges",
+        "item": "https://drmullerdentistry.com/services/crowns-bridges"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Crowns & Bridges",
+    "description": "Restore structural strength and visual appearance with custom crowns and bridges.",
+    "url": "https://drmullerdentistry.com/services/crowns-bridges",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Crowns & Bridges",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">

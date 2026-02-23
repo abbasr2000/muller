@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Dental Implants | St. John's NL | Dr. Muller Dentistry",
   description: "The gold-standard, permanent tooth replacement that looks and feels totally natural.",
-  keywords: ["Dental Implants St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Dental Implants St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Dental Implants"],
+  alternates: {
+    canonical: "/services/dental-implants",
+  },
+  openGraph: {
+    title: "Dental Implants | Dr. Muller Dentistry",
+    description: "The gold-standard, permanent tooth replacement that looks and feels totally natural.",
+    url: "https://drmullerdentistry.com/services/dental-implants",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Dental Implants at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dental Implants | Dr. Muller Dentistry",
+    description: "The gold-standard, permanent tooth replacement that looks and feels totally natural.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "Am I a good candidate for dental implants?", "acceptedAnswer": {"@type": "Answer", "text": "The vast majority of adults with good general health and sufficient jawbone density are excellent candidates for implants. Even if you have experienced significant bone loss due to long-term missing teeth, advanced procedures like bone grafting can often rebuild the area to make implants possible. We offer very comprehensive consultations to determine your exact candidacy."}}, {"@type": "Question", "name": "Is the actual implant surgical procedure painful?", "acceptedAnswer": {"@type": "Answer", "text": "The precise implant placement is performed under profound local anesthesia. Because the jawbone itself has very few nerve endings, most patients are incredibly surprised to report that the procedure is often less uncomfortable than a standard tooth extraction. Minor swelling and mild soreness for a few days afterward are perfectly normal and easily managed with over-the-counter medication."}}, {"@type": "Question", "name": "How much do dental implants cost?", "acceptedAnswer": {"@type": "Answer", "text": "The total cost varies significantly depending on exactly how many teeth need replacing, the type of implant required, and whether any preparatory procedures (like gentle bone grafting or sinus lifting) are needed. We will provide a completely detailed, transparent financial estimate during your personal consultation so there are no surprises."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Dental Implants",
+        "item": "https://drmullerdentistry.com/services/dental-implants"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Dental Implants",
+    "description": "The gold-standard, permanent tooth replacement that looks and feels totally natural.",
+    "url": "https://drmullerdentistry.com/services/dental-implants",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Dental Implants",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">

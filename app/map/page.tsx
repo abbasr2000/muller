@@ -14,11 +14,36 @@ import { SITE } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Map & Reviews | Find Us | St. John's NL",
   description: `Find Dr. Muller Dentistry on the map. ${SITE.address}. Read Google reviews and follow us on Instagram. St. John's, Newfoundland.`,
+  alternates: {
+    canonical: "/map",
+  },
   keywords: [
     "Dr. Muller Dentistry map",
     "dentist St. John's location",
     "Google reviews St. John's dentist",
   ],
+  openGraph: {
+    title: "Map & Reviews | Dr. Muller Dentistry St. John's NL",
+    description: "Find Dr. Muller Dentistry on the map. Read Google reviews and follow us on Instagram. St. John's, Newfoundland.",
+    url: "https://drmullerdentistry.com/map",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/front-page-hero-2.png",
+        width: 1200,
+        height: 630,
+        alt: "Map and Location of Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Map & Reviews | Dr. Muller Dentistry St. John's NL",
+    description: "Find Dr. Muller Dentistry on the map. Read Google reviews and follow us on Instagram.",
+    images: ["/front-page-hero-2.png"],
+  },
 };
 
 // Google Maps embed - shows the map with the place marked

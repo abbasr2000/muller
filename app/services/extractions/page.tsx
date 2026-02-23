@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Tooth Extractions | St. John's NL | Dr. Muller Dentistry",
   description: "Safe, painless, and highly comfortable extractions when a tooth simply cannot be saved.",
-  keywords: ["Tooth Extractions St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Tooth Extractions St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Tooth Extractions"],
+  alternates: {
+    canonical: "/services/extractions",
+  },
+  openGraph: {
+    title: "Tooth Extractions | Dr. Muller Dentistry",
+    description: "Safe, painless, and highly comfortable extractions when a tooth simply cannot be saved.",
+    url: "https://drmullerdentistry.com/services/extractions",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Tooth Extractions at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tooth Extractions | Dr. Muller Dentistry",
+    description: "Safe, painless, and highly comfortable extractions when a tooth simply cannot be saved.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "What exactly should I expect during a typical tooth extraction?", "acceptedAnswer": {"@type": "Answer", "text": "Before doing anything, we will test the area to ensure it is profoundly numb. You will feel a sensation of firm pressure or pushing during the procedure, but you should absolutely not feel any sharp or pinching pain. Due to our advanced techniques, the extraction itself is often surprisingly rapid."}}, {"@type": "Question", "name": "Do you handle the removal of wisdom teeth?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! We routinely handle many simple and moderately complex wisdom tooth extractions right here in our St. John's office. If your specific case is evaluated via 3D scan to be exceptionally complex or deeply impacted near a major nerve, we will seamlessly refer you to a trusted local oral surgeon specialist."}}, {"@type": "Question", "name": "How long is the typical recovery period?", "acceptedAnswer": {"@type": "Answer", "text": "The initial soft-tissue healing and clotting usually takes about one week, though the underlying bone will take a few months to fully solidify. Before you leave, we will provide you with highly detailed post-operative instructions on what to eat and how to clean the area to ensure a smooth recovery and help you avoid any complications like dry socket."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Tooth Extractions",
+        "item": "https://drmullerdentistry.com/services/extractions"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Tooth Extractions",
+    "description": "Safe, painless, and highly comfortable extractions when a tooth simply cannot be saved.",
+    "url": "https://drmullerdentistry.com/services/extractions",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Tooth Extractions",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">

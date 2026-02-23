@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://drmullerdentistry.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default:
       "Dr. Muller Dentistry | St. John's NL | Root Canal & Dental Care",
@@ -34,10 +37,35 @@ export const metadata: Metadata = {
     "NL dentist",
   ],
   openGraph: {
+    title: "Dr. Muller Dentistry | St. John's NL | Root Canal & Dental Care",
+    description: "Dr. Muller Dentistry in St. John's, Newfoundland. Expert root canal therapy, general dentistry, cleanings, and full dental care. 386 Stavanger Dr, St. John's NL.",
+    url: "https://drmullerdentistry.com",
+    siteName: "Dr. Muller Dentistry",
     locale: "en_CA",
     type: "website",
+    images: [
+      {
+        url: "/front-page-hero-2.png",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Muller Dentistry St. John's",
+      },
+    ],
   },
-  robots: "index, follow",
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Muller Dentistry | St. John's NL",
+    description: "Expert root canal therapy, general dentistry, cleanings, and full dental care in St. John's, NL.",
+    images: ["/front-page-hero-2.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({

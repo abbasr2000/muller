@@ -10,12 +10,37 @@ export const metadata: Metadata = {
   title: "Dental Services | St. John's NL",
   description:
     "Full range of dental services in St. John's, Newfoundland: root canal therapy, cleanings, fillings, crowns, implants, cosmetic dentistry, and emergency care. Dr. Muller Dentistry.",
+  alternates: {
+    canonical: "/services",
+  },
   keywords: [
     "dental services St. John's",
     "dentist Newfoundland",
     "root canal NL",
     "dental treatments St. John's",
   ],
+  openGraph: {
+    title: "Dental Services | Dr. Muller Dentistry St. John's NL",
+    description: "Full range of dental services in St. John's, Newfoundland: root canal therapy, cleanings, fillings, crowns, implants, cosmetic dentistry, and emergency care.",
+    url: "https://drmullerdentistry.com/services",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Dental Services at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dental Services | Dr. Muller Dentistry St. John's NL",
+    description: "Full range of dental services in St. John's, Newfoundland.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicesPage() {

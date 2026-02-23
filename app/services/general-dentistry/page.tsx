@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "General Dentistry | St. John's NL | Dr. Muller Dentistry",
   description: "Complete, comprehensive exams, advanced preventive care, and routine treatments for the entire family.",
-  keywords: ["General Dentistry St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["General Dentistry St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental General Dentistry"],
+  alternates: {
+    canonical: "/services/general-dentistry",
+  },
+  openGraph: {
+    title: "General Dentistry | Dr. Muller Dentistry",
+    description: "Complete, comprehensive exams, advanced preventive care, and routine treatments for the entire family.",
+    url: "https://drmullerdentistry.com/services/general-dentistry",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "General Dentistry at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "General Dentistry | Dr. Muller Dentistry",
+    description: "Complete, comprehensive exams, advanced preventive care, and routine treatments for the entire family.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "Are you currently accepting new patients into the practice?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely, yes! We are currently actively welcoming new patients and families from across St. John's and the surrounding Newfoundland areas. We would be absolutely thrilled to have you join our dental family and experience our premium care."}}, {"@type": "Question", "name": "At exactly what age should I bring my toddler in for their very first dental visit?", "acceptedAnswer": {"@type": "Answer", "text": "We highly recommend bringing your child in for their first dedicated dental visit by their first birthday, or within six short months after their very first baby tooth officially erupts. Early, fun visits help them get incredibly comfortable with the dentist chair environment and allow us to closely monitor their early jaw development."}}, {"@type": "Question", "name": "What should I bring with me to my first new patient appointment?", "acceptedAnswer": {"@type": "Answer", "text": "Please bring a valid piece of photo ID, your active dental insurance card (if applicable so we can help you with billing), and a completely updated list of any and all medical prescriptions you are currently taking. We will also happily provide you with our streamlined new patient intake forms to easily fill out upon arrival."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "General Dentistry",
+        "item": "https://drmullerdentistry.com/services/general-dentistry"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "General Dentistry",
+    "description": "Complete, comprehensive exams, advanced preventive care, and routine treatments for the entire family.",
+    "url": "https://drmullerdentistry.com/services/general-dentistry",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "General Dentistry",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">

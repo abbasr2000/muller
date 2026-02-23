@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Root Canal Therapy | St. John's NL | Dr. Muller Dentistry",
   description:
     "Expert root canal treatment in St. John's, Newfoundland. Save your tooth, relieve pain, and restore oral health. Modern techniques and compassionate care. Dr. Muller Dentistry.",
+  alternates: {
+    canonical: "/services/root-canal",
+  },
   keywords: [
     "root canal St. John's",
     "root canal Newfoundland",
@@ -15,11 +18,130 @@ export const metadata: Metadata = {
     "endodontist St. John's",
     "root canal dentist St. John's",
   ],
+  openGraph: {
+    title: "Root Canal Therapy | Dr. Muller Dentistry",
+    description: "Expert root canal treatment in St. John's, Newfoundland. Save your tooth, relieve pain, and restore oral health.",
+    url: "https://drmullerdentistry.com/services/root-canal",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/root-canal-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Root Canal Therapy at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Root Canal Therapy | Dr. Muller Dentistry",
+    description: "Expert root canal treatment in St. John's, Newfoundland.",
+    images: ["/root-canal-hero.png"],
+  },
 };
 
 export default function RootCanalPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does a root canal take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most root canals take one to two visits, each typically between 60 and 90 minutes, depending on the tooth and complexity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a root canal better than pulling the tooth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Saving your natural tooth with a root canal is usually the preferred option. It preserves your bite, avoids shifting of neighbouring teeth, and looks and feels like your own tooth once restored with a crown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a crown after a root canal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For back teeth (molars and premolars), a crown is usually recommended to protect the tooth from fracture. Front teeth may sometimes be restored with a filling. We’ll recommend what’s best for your case."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I get a root canal in St. John's or Newfoundland?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dr. Muller Dentistry provides root canal therapy at our St. John's location on Stavanger Drive. We welcome patients from across the St. John's metro area and Newfoundland and Labrador."
+        }
+      }
+    ]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Root Canal Therapy",
+        "item": "https://drmullerdentistry.com/services/root-canal"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Root Canal Therapy",
+    "description": "Expert root canal treatment in St. John's, Newfoundland. Save your tooth, relieve pain, and restore oral health.",
+    "url": "https://drmullerdentistry.com/services/root-canal",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body": {
+      "@type": "AnatomicalStructure",
+      "name": "Tooth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Root Canal Therapy",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/10 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[600px] rounded-full bg-primary/10 blur-[150px]" />
 

@@ -134,12 +134,101 @@ import {{ Button }} from "@/components/ui/button";
 export const metadata: Metadata = {{
   title: "{title} | St. John's NL | Dr. Muller Dentistry",
   description: "{desc}",
-  keywords: ["{title} St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["{title} St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental {title}"],
+  alternates: {{
+    canonical: "/services/{slug}",
+  }},
+  openGraph: {{
+    title: "{title} | Dr. Muller Dentistry",
+    description: "{desc}",
+    url: "https://drmullerdentistry.com/services/{slug}",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {{
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "{title} at Dr. Muller Dentistry",
+      }}
+    ],
+  }},
+  twitter: {{
+    card: "summary_large_image",
+    title: "{title} | Dr. Muller Dentistry",
+    description: "{desc}",
+    images: ["/services-hero.png"],
+  }},
 }};
 
 export default function ServicePage() {{
+  const faqSchema = {{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": {faq_schema_json}
+  }};
+
+  const breadcrumbSchema = {{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      }},
+      {{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      }},
+      {{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{title}",
+        "item": "https://drmullerdentistry.com/services/{slug}"
+      }}
+    ]
+  }};
+
+  const procedureSchema = {{
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "{title}",
+    "description": "{desc}",
+    "url": "https://drmullerdentistry.com/services/{slug}",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {{
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    }},
+    "availableService": {{
+      "@type": "MedicalTherapy",
+      "name": "{title}",
+      "provider": {{
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }}
+    }}
+  }};
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{{{ __html: JSON.stringify(faqSchema) }}}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{{{ __html: JSON.stringify(breadcrumbSchema) }}}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{{{ __html: JSON.stringify(procedureSchema) }}}}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">
@@ -221,12 +310,25 @@ for slug, data in services_data.items():
             </p>
           </details>\n"""
 
+    faq_entities = []
+    for faq in data["faqs"]:
+        faq_entities.append({
+            "@type": "Question",
+            "name": faq["q"],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq["a"]
+            }
+        })
+
     final_content = template.format(
         title=data["title"],
         desc=data["desc"],
+        slug=slug,
         content_blocks=content_blocks,
         benefits_blocks=benefits_html,
-        faqs_blocks=faqs_html
+        faqs_blocks=faqs_html,
+        faq_schema_json=json.dumps(faq_entities)
     )
     
     filepath = os.path.join(base_dir, slug, "page.tsx")

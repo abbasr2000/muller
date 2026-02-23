@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Cosmetic Dentistry | St. John's NL | Dr. Muller Dentistry",
   description: "Professional whitening, custom veneers, and total smile makeovers in St. John's.",
-  keywords: ["Cosmetic Dentistry St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Cosmetic Dentistry St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Cosmetic Dentistry"],
+  alternates: {
+    canonical: "/services/cosmetic-dentistry",
+  },
+  openGraph: {
+    title: "Cosmetic Dentistry | Dr. Muller Dentistry",
+    description: "Professional whitening, custom veneers, and total smile makeovers in St. John's.",
+    url: "https://drmullerdentistry.com/services/cosmetic-dentistry",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Cosmetic Dentistry at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cosmetic Dentistry | Dr. Muller Dentistry",
+    description: "Professional whitening, custom veneers, and total smile makeovers in St. John's.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "What exact cosmetic treatments do you offer?", "acceptedAnswer": {"@type": "Answer", "text": "We offer a diverse range of cosmetic services tailored to your needs, including high-strength professional teeth whitening, custom ultra-thin porcelain veneers, cosmetic dental bonding for chips, and full-mouth smile makeovers."}}, {"@type": "Question", "name": "How long does professional teeth whitening last?", "acceptedAnswer": {"@type": "Answer", "text": "The bright results of professional teeth whitening can last from several months up to a few years. This heavily depends on your specific lifestyle habits (such as smoking, or drinking coffee, tea, and red wine) and how consistently you maintain your at-home oral hygiene."}}, {"@type": "Question", "name": "Are porcelain veneers permanent?", "acceptedAnswer": {"@type": "Answer", "text": "Veneers are considered a permanent and irreversible cosmetic solution because a very small, microscopic amount of your natural tooth enamel must be removed to place them flush. However, with excellent care, premium porcelain veneers can last 10-15 years or more before they may need replacement or maintenance."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Cosmetic Dentistry",
+        "item": "https://drmullerdentistry.com/services/cosmetic-dentistry"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Cosmetic Dentistry",
+    "description": "Professional whitening, custom veneers, and total smile makeovers in St. John's.",
+    "url": "https://drmullerdentistry.com/services/cosmetic-dentistry",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Cosmetic Dentistry",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">

@@ -1,65 +1,120 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, ChevronRight, Phone } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Emergency Dental Care | St. John's NL | Dr. Muller Dentistry",
   description: "Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.",
-  keywords: ["Emergency Dental Care St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Emergency Dental Care St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Emergency Dental Care"],
+  alternates: {
+    canonical: "/services/emergency-dental",
+  },
+  openGraph: {
+    title: "Emergency Dental Care | Dr. Muller Dentistry",
+    description: "Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.",
+    url: "https://drmullerdentistry.com/services/emergency-dental",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Emergency Dental Care at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emergency Dental Care | Dr. Muller Dentistry",
+    description: "Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "What exactly qualifies as a true 'Dental Emergency'?", "acceptedAnswer": {"@type": "Answer", "text": "A true dental emergency includes severe, unmanageable toothaches, a tooth that has been knocked entirely out of the mouth, a cracked or badly broken tooth accompanied by sharp pain, significant and uncontrollable bleeding from the gums, or large facial swelling. Extreme swelling that affects breathing or swallowing is a critical medical emergency and warrants an immediate trip to the nearest hospital ER."}}, {"@type": "Question", "name": "What should I do immediately if my tooth gets knocked completely out?", "acceptedAnswer": {"@type": "Answer", "text": "Time is highly critical! Handle the tooth only by the crown (the top part), NEVER the root. Do not scrub it. Gently rinse it with water if dirty, and try your best to temporarily place it back into the socket. If that is impossible, keep it fully submerged in a small cup of milk or your own saliva, and rush to see us within 60 minutes for the highest chance of saving it."}}, {"@type": "Question", "name": "Should I go to the hospital emergency room for my toothache?", "acceptedAnswer": {"@type": "Answer", "text": "In the vast majority of standard toothache cases, a hospital ER can only provide pain medication or temporary antibiotics; they do not have the tools to actually fix the tooth. You must see a dentist to properly resolve the underlying root cause. However, if your dental infection is causing severe, rapid swelling that impacts your ability to breathe, swallow, or see, you MUST go to the hospital ER immediately."}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Emergency Dental Care",
+        "item": "https://drmullerdentistry.com/services/emergency-dental"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Emergency Dental Care",
+    "description": "Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.",
+    "url": "https://drmullerdentistry.com/services/emergency-dental",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Emergency Dental Care",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-destructive/10 via-background to-background py-16 md:py-24">
-        <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-destructive/10 blur-[130px]" />
-
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-
-            <div className="order-2 lg:order-1 max-w-2xl text-center lg:text-left">
-              <div className="inline-flex items-center justify-center lg:justify-start gap-2 text-sm text-muted-foreground mb-8">
-                <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-                <ChevronRight className="size-4" />
-                <span className="text-foreground font-medium">Emergency Dental Care</span>
-              </div>
-
-              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
-                Emergency Dental Care
-              </h1>
-              <p className="mt-6 text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
-                Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <Button asChild size="lg" variant="destructive" className="rounded-full shadow-lg shadow-destructive/20 px-8 font-bold text-base h-12">
-                  <a href={`tel:${SITE.phone.replace(/\D/g, "")}`}>
-                    <Phone className="size-5 mr-no-spacing mr-2" />
-                    Call Now: {SITE.phone}
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12">
-                  <Link href="/contact">View Location</Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2 group relative mx-auto w-full max-w-lg lg:max-w-none shadow-xl rounded-[2rem] overflow-hidden border border-destructive/20 bg-background/50 backdrop-blur-sm">
-              <div className="absolute inset-0 bg-gradient-to-tr from-destructive/10 to-transparent mix-blend-overlay z-10 pointer-events-none transition-opacity duration-700 group-hover:opacity-70"></div>
-              <Image
-                src="/emergency-dental-hero.png"
-                alt="Emergency Dental Contact"
-                width={800}
-                height={800}
-                className="object-cover w-full h-auto transform transition-transform duration-1000 group-hover:scale-105"
-                priority
-              />
-            </div>
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
+      <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
+        <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
+        <div className="container mx-auto max-w-7xl px-4 text-center">
+          <div className="inline-flex items-center gap-2 text-sm text-muted-foreground mb-8">
+            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+            <ChevronRight className="size-4" />
+            <span className="text-foreground font-medium">Emergency Dental Care</span>
           </div>
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
+            Emergency Dental Care
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
+            Immediate, same-day emergency dental care in St. John's for severe pain, trauma, and urgent issues.
+          </p>
         </div>
       </section>
 

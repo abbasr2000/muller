@@ -6,12 +6,101 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Fillings | St. John's NL | Dr. Muller Dentistry",
   description: "Invisible, tooth-colored composite resin fillings to beautifully restore teeth affected by decay.",
-  keywords: ["Fillings St. John's", "dentist Newfoundland", "Dr. Muller Dentistry"],
+  keywords: ["Fillings St. John's", "dentist Newfoundland", "Dr. Muller Dentistry", "dental Fillings"],
+  alternates: {
+    canonical: "/services/fillings",
+  },
+  openGraph: {
+    title: "Fillings | Dr. Muller Dentistry",
+    description: "Invisible, tooth-colored composite resin fillings to beautifully restore teeth affected by decay.",
+    url: "https://drmullerdentistry.com/services/fillings",
+    siteName: "Dr. Muller Dentistry",
+    locale: "en_CA",
+    type: "website",
+    images: [
+      {
+        url: "/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Fillings at Dr. Muller Dentistry",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fillings | Dr. Muller Dentistry",
+    description: "Invisible, tooth-colored composite resin fillings to beautifully restore teeth affected by decay.",
+    images: ["/services-hero.png"],
+  },
 };
 
 export default function ServicePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{"@type": "Question", "name": "How long does it typically take to get a filling?", "acceptedAnswer": {"@type": "Answer", "text": "Getting a standard filling is a very fast and efficient procedure that usually takes between just 30 to 45 minutes per tooth, largely dependent on the size, depth, and specific location of the cavity being removed."}}, {"@type": "Question", "name": "Are modern composite fillings truly as strong as old silver (amalgam) fillings?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Modern cosmetic composite materials are highly engineered to be incredibly durable and withstand the heavy forces of daily chewing phenomenally well. While dark metal fillings were traditionally considered stronger decades ago, today's advanced bonding composites offer exceptional, reliable longevity for the vast majority of cavities."}}, {"@type": "Question", "name": "Will my tooth be sensitive right after getting a filling?", "acceptedAnswer": {"@type": "Answer", "text": "It is completely normal to experience some minor, fleeting sensitivity to extreme hot or cold for a few days up to a week after getting a new filling as the inner tooth nerve settles down. However, if the sensitivity persists for longer, or if you feel a sharp, shooting pain specifically when biting down, please call us so we can quickly and easily adjust your bite!"}}]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://drmullerdentistry.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://drmullerdentistry.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fillings",
+        "item": "https://drmullerdentistry.com/services/fillings"
+      }
+    ]
+  };
+
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Fillings",
+    "description": "Invisible, tooth-colored composite resin fillings to beautifully restore teeth affected by decay.",
+    "url": "https://drmullerdentistry.com/services/fillings",
+    "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
+    "body" : {
+      "@type": "AnatomicalStructure",
+      "name": "Mouth"
+    },
+    "availableService": {
+      "@type": "MedicalTherapy",
+      "name": "Fillings",
+      "provider": {
+        "@type": "Dentist",
+        "@id": "https://drmullerdentistry.com/#dentist"
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
         <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
         <div className="container mx-auto max-w-7xl px-4 text-center">
