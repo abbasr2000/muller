@@ -32,7 +32,7 @@ export default function ServicePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{"@type": "Question", "name": "Are you currently accepting new patients into the practice?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely, yes! We are currently actively welcoming new patients and families from across St. John's and the surrounding Newfoundland areas. We would be absolutely thrilled to have you join our dental family and experience our premium care."}}, {"@type": "Question", "name": "At exactly what age should I bring my toddler in for their very first dental visit?", "acceptedAnswer": {"@type": "Answer", "text": "We highly recommend bringing your child in for their first dedicated dental visit by their first birthday, or within six short months after their very first baby tooth officially erupts. Early, fun visits help them get incredibly comfortable with the dentist chair environment and allow us to closely monitor their early jaw development."}}, {"@type": "Question", "name": "What should I bring with me to my first new patient appointment?", "acceptedAnswer": {"@type": "Answer", "text": "Please bring a valid piece of photo ID, your active dental insurance card (if applicable so we can help you with billing), and a completely updated list of any and all medical prescriptions you are currently taking. We will also happily provide you with our streamlined new patient intake forms to easily fill out upon arrival."}}]
+    "mainEntity": [{ "@type": "Question", "name": "Are you currently accepting new patients into the practice?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely, yes! We are currently actively welcoming new patients and families from across St. John's and the surrounding Newfoundland areas. We would be absolutely thrilled to have you join our dental family and experience our premium care." } }, { "@type": "Question", "name": "At exactly what age should I bring my toddler in for their very first dental visit?", "acceptedAnswer": { "@type": "Answer", "text": "We highly recommend bringing your child in for their first dedicated dental visit by their first birthday, or within six short months after their very first baby tooth officially erupts. Early, fun visits help them get incredibly comfortable with the dentist chair environment and allow us to closely monitor their early jaw development." } }, { "@type": "Question", "name": "What should I bring with me to my first new patient appointment?", "acceptedAnswer": { "@type": "Answer", "text": "Please bring a valid piece of photo ID, your active dental insurance card (if applicable so we can help you with billing), and a completely updated list of any and all medical prescriptions you are currently taking. We will also happily provide you with our streamlined new patient intake forms to easily fill out upon arrival." } }]
   };
 
   const breadcrumbSchema = {
@@ -67,7 +67,7 @@ export default function ServicePage() {
     "description": "Complete, comprehensive exams, advanced preventive care, and routine treatments for the entire family.",
     "url": "https://drmullerdentistry.com/services/general-dentistry",
     "procedureType": "https://health-lifesci.schema.org/NoninvasiveProcedure",
-    "body" : {
+    "body": {
       "@type": "AnatomicalStructure",
       "name": "Mouth"
     },

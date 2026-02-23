@@ -73,6 +73,14 @@ export default function RootCanalPage() {
           "@type": "Answer",
           "text": "Dr. Muller Dentistry provides root canal therapy at our St. John's location on Stavanger Drive. We welcome patients from across the St. John's metro area and Newfoundland and Labrador."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a root canal cost in St. John's, NL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cost of a root canal in St. John's varies depending on several factors, including the location of the tooth and the complexity of its root structure. For instance, molars typically have more canals than front teeth and require more time to treat. During your consultation, we provide a transparent, detailed estimate based on your specific needs. Most dental insurance plans in Newfoundland and Labrador provide coverage for root canal therapy."
+        }
       }
     ]
   };
@@ -314,6 +322,18 @@ export default function RootCanalPage() {
               </summary>
               <p className="mt-4 text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-300">
                 Dr. Muller Dentistry provides root canal therapy at our St. John&apos;s location on Stavanger Drive. We welcome patients from across the St. John&apos;s metro area and Newfoundland and Labrador.
+              </p>
+            </details>
+
+            <details className="group rounded-2xl border border-primary/10 bg-card/50 p-6 backdrop-blur-sm open:bg-card/80 transition-all duration-300">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-foreground text-lg group-open:text-primary transition-colors">
+                How much does a root canal cost in St. John&apos;s, NL?
+                <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-primary">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-300">
+                The cost of a root canal in St. John&apos;s varies depending on several factors, including the location of the tooth and the complexity of its root structure. For instance, molars typically have more canals than front teeth and require more time to treat. During your consultation, we provide a transparent, detailed estimate based on your specific needs. Most dental insurance plans in Newfoundland and Labrador provide coverage for root canal therapy.
               </p>
             </details>
           </div>
