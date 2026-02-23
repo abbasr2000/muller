@@ -103,7 +103,7 @@ export default function HomePage() {
               <div className="absolute bottom-6 left-6 z-20">
                 <div className="inline-flex items-center gap-2 rounded-full bg-background/80 backdrop-blur-md px-4 py-2 text-sm font-semibold text-foreground shadow-lg">
                   <span className="size-2 rounded-full bg-primary animate-pulse" />
-                  Specialized Treatment
+                  Advanced Treatment
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function HomePage() {
                   A Core Focus
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                  We provide specialized root canal treatment to save your natural teeth and
+                  We provide advanced root canal treatment to save your natural teeth and
                   relieve pain. Our modern, patient-first approach ensures the procedure is
                   surprisingly comfortable and highly efficient.
                 </p>
