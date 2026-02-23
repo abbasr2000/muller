@@ -27,7 +27,7 @@ export default function RootCanalPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="max-w-2xl">
               <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
-                Specialized Treatment
+                Advanced Treatment
               </div>
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
                 Root Canal Therapy
