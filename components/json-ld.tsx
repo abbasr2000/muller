@@ -5,8 +5,8 @@ const localBusinessSchema = {
   "@type": "Dentist",
   name: SITE.name,
   description:
-    "David Muller Dentistry offers root canal therapy, general dentistry, cleanings, and full dental care in St. John's, Newfoundland and Labrador.",
-  url: "https://davidmullerdentistry.ca",
+    "Dr. Muller Dentistry offers root canal therapy, general dentistry, cleanings, and full dental care in St. John's, Newfoundland and Labrador.",
+  url: "https://drmullerdentistry.com",
   telephone: SITE.phone,
   email: SITE.email,
   address: {
@@ -24,8 +24,8 @@ const localBusinessSchema = {
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "08:00",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
+    opens: "08:30",
     closes: "17:00",
   },
   areaServed: [

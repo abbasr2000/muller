@@ -12,7 +12,7 @@ export const Footer = () => {
             <Link
               href="/"
               className="flex items-center gap-2 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
-              aria-label="David Muller Dentistry - Home"
+              aria-label="Dr. Muller Dentistry - Home"
             >
               <Image
                 src="/logo.png"
@@ -22,7 +22,7 @@ export const Footer = () => {
                 className="h-10 w-10 object-contain invert"
               />
               <span className="font-semibold text-foreground">
-                David Muller Dentistry
+                Dr. Muller Dentistry
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
@@ -129,7 +129,7 @@ export const Footer = () => {
 
         <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} David Muller Dentistry. Serving St.
+            © {new Date().getFullYear()} Dr. Muller Dentistry. Serving St.
             John&apos;s, Newfoundland and Labrador.
           </p>
           <a

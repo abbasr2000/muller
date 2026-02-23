@@ -3,6 +3,6 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://davidmullerdentistry.ca/sitemap.xml",
+    sitemap: "https://drmullerdentistry.com/sitemap.xml",
   };
 }

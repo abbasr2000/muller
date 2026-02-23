@@ -8,7 +8,7 @@ export const SITE = {
   phone: "(709) 400-7474",
   email: "drmullerdentistry@gmail.com",
   // Placeholder – replace with real hours
-  hours: "Mon–Fri 8:00 AM – 5:00 PM",
+  hours: "Mon–Thurs & every other Saturday 8:30 AM – 5:30 PM",
   googlePlaceId: "ChIJFS-nL7W9DEsRgUonFckNA3Y",
   mapUrl:
     "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
@@ -39,7 +39,7 @@ export const SERVICES: Array<{
     slug: "root-canal",
     title: "Root Canal Therapy",
     shortDescription:
-      "Expert root canal treatment to save your tooth and relieve pain. A core focus of our St. John's practice.",
+      "Root canal treatment to save your tooth and relieve pain. A core focus of our St. John's practice.",
     featured: true,
   },
   {

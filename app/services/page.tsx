@@ -8,7 +8,7 @@ import { SERVICES } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Dental Services | St. John's NL",
   description:
-    "Full range of dental services in St. John's, Newfoundland: root canal therapy, cleanings, fillings, crowns, implants, cosmetic dentistry, and emergency care. David Muller Dentistry.",
+    "Full range of dental services in St. John's, Newfoundland: root canal therapy, cleanings, fillings, crowns, implants, cosmetic dentistry, and emergency care. Dr. Muller Dentistry.",
   keywords: [
     "dental services St. John's",
     "dentist Newfoundland",

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "General Dentistry | St. John's NL",
   description:
-    "General dentistry in St. John's, Newfoundland: exams, preventive care, fillings, and routine treatments for the whole family. David Muller Dentistry.",
+    "General dentistry in St. John's, Newfoundland: exams, preventive care, fillings, and routine treatments for the whole family. Dr. Muller Dentistry.",
   keywords: ["general dentist St. John's", "family dentist Newfoundland", "NL dental care"],
 };
 

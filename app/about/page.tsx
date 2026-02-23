@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About Dr. Muller | Dentist St. John's Newfoundland",
-  description: `Meet Dr. David Muller, DDS – University of Toronto trained, Endodontics-focused. ICOI & AAIP Fellow. Expert root canal therapy and dental care in St. John's, NL. ${SITE.address}.`,
+  description: `Meet Dr. David Muller, DDS – University of Toronto trained, ICOI & AAIP Fellow. With extensive training in root canal therapy and dental care in St. John's, NL. ${SITE.address}.`,
   keywords: [
     "Dr. David Muller",
     "dentist St. John's",
@@ -37,7 +37,7 @@ export default function AboutPage() {
             About Dr. Muller
           </h2>
           <p className="mt-2 text-muted-foreground max-w-2xl">
-            Doctor of Dental Surgery — trained in Endodontics at the University of Toronto, with international training in implantology and oral surgery.
+            Doctor of Dental Surgery — trained at the University of Toronto, with international training in implantology and oral surgery.
           </p>
           <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             <div className="relative aspect-[3/4] max-h-[480px] w-full overflow-hidden rounded-2xl border border-border bg-muted lg:max-h-none">

@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Emergency Dental | St. John's NL",
   description:
-    "Emergency dental care in St. John's, Newfoundland. Same-day care for pain, trauma, and urgent dental issues. David Muller Dentistry.",
+    "Emergency dental care in St. John's, Newfoundland. Same-day care for pain, trauma, and urgent dental issues. Dr. Muller Dentistry.",
   keywords: ["emergency dentist St. John's", "dental emergency Newfoundland", "urgent dentist NL"],
 };
 

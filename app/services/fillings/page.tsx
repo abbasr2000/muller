@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Dental Fillings | St. John's NL",
   description:
-    "Tooth-colored dental fillings in St. John's, Newfoundland. Restore teeth affected by decay with natural-looking, durable fillings. David Muller Dentistry.",
+    "Tooth-colored dental fillings in St. John's, Newfoundland. Restore teeth affected by decay with natural-looking, durable fillings. Dr. Muller Dentistry.",
   keywords: ["dental fillings St. John's", "tooth filling Newfoundland", "cavity filling NL"],
 };
 

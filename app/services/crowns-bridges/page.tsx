@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Crowns & Bridges | St. John's NL",
   description:
-    "Dental crowns and bridges in St. John's, Newfoundland. Restore strength and appearance with custom restorations. David Muller Dentistry.",
+    "Dental crowns and bridges in St. John's, Newfoundland. Restore strength and appearance with custom restorations. Dr. Muller Dentistry.",
   keywords: ["dental crowns St. John's", "dental bridge Newfoundland", "crown and bridge NL"],
 };
 

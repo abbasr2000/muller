@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Cosmetic Dentistry | St. John's NL",
   description:
-    "Cosmetic dentistry in St. John's, Newfoundland: whitening, veneers, and smile makeovers. Enhance your smile at David Muller Dentistry.",
+    "Cosmetic dentistry in St. John's, Newfoundland: whitening, veneers, and smile makeovers. Enhance your smile at Dr. Muller Dentistry.",
   keywords: ["cosmetic dentist St. John's", "teeth whitening Newfoundland", "veneers NL"],
 };
 

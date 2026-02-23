@@ -17,7 +17,7 @@ export default function HomePage() {
               Quality Dental Care in St. John&apos;s, Newfoundland
             </h1>
             <p className="mt-4 text-lg text-muted-foreground sm:text-xl">
-              Expert root canal therapy, general dentistry, and comprehensive
+             Root canal therapy, general dentistry, and comprehensive
               dental services for you and your family. Proudly serving St.
               John&apos;s and the greater Newfoundland area.
             </p>
@@ -76,7 +76,7 @@ export default function HomePage() {
               <span className="border-b-2 border-primary/40 pb-1">Root Canal Therapy</span> — A Core Focus
             </h2>
             <p className="mt-2 text-muted-foreground">
-              We specialize in root canal treatment to save your tooth and
+              We provide root canal treatment to save your tooth and
               relieve pain. Many patients find the procedure more comfortable
               than they expect.
             </p>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Tooth Extractions | St. John's NL",
   description:
-    "Safe, comfortable tooth extractions in St. John's, Newfoundland. When a tooth can't be saved, we perform extractions with care. David Muller Dentistry.",
+    "Safe, comfortable tooth extractions in St. John's, Newfoundland. When a tooth can't be saved, we perform extractions with care. Dr. Muller Dentistry.",
   keywords: ["tooth extraction St. John's", "dental extraction Newfoundland", "pull tooth NL"],
 };
 

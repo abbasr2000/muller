@@ -17,19 +17,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://davidmullerdentistry.ca"),
+  metadataBase: new URL("https://drmullerdentistry.com"),
   title: {
     default:
-      "David Muller Dentistry | St. John's NL | Root Canal & Dental Care",
-    template: "%s | David Muller Dentistry St. John's",
+      "Dr. Muller Dentistry | St. John's NL | Root Canal & Dental Care",
+    template: "%s | Dr. Muller Dentistry St. John's",
   },
   description:
-    "David Muller Dentistry in St. John's, Newfoundland. Expert root canal therapy, general dentistry, cleanings, and full dental care. 386 Stavanger Dr, St. John's NL.",
+    "Dr. Muller Dentistry in St. John's, Newfoundland. Expert root canal therapy, general dentistry, cleanings, and full dental care. 386 Stavanger Dr, St. John's NL.",
   keywords: [
     "dentist St. John's",
     "root canal St. John's NL",
     "dentist Newfoundland",
-    "David Muller Dentistry",
+    "Dr. Muller Dentistry",
     "dental clinic St. John's",
     "NL dentist",
   ],

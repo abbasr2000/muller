@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Cleanings & Checkups | St. John's NL",
   description:
-    "Professional dental cleanings and checkups in St. John's, Newfoundland. Keep your smile healthy with regular care at David Muller Dentistry.",
+    "Professional dental cleanings and checkups in St. John's, Newfoundland. Keep your smile healthy with regular care at Dr. Muller Dentistry.",
   keywords: ["dental cleaning St. John's", "dental checkup Newfoundland", "teeth cleaning NL"],
 };
 

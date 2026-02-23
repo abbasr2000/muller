@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Dental Implants | St. John's NL",
   description:
-    "Dental implants in St. John's, Newfoundland. Permanent tooth replacement that looks and feels natural. David Muller Dentistry.",
+    "Dental implants in St. John's, Newfoundland. Permanent tooth replacement that looks and feels natural. Dr. Muller Dentistry.",
   keywords: ["dental implants St. John's", "implant dentist Newfoundland", "teeth implants NL"],
 };
 

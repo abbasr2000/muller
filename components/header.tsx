@@ -19,18 +19,18 @@ export const Header = () => {
         <Link
           href="/"
           className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
-          aria-label="David Muller Dentistry - Home"
+          aria-label="Dr. Muller Dentistry - Home"
           onClick={handleCloseMenu}
         >
           <Image
             src="/logo.png"
-            alt="David Muller Dentistry logo"
+            alt="Dr. Muller Dentistry logo"
             width={48}
             height={48}
             className="h-10 w-10 object-contain invert sm:h-12 sm:w-12"
           />
           <span className="font-semibold text-foreground hidden sm:inline">
-            David Muller Dentistry
+            Dr. Muller Dentistry
           </span>
         </Link>
 

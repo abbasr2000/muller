@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Root Canal Therapy | St. John's NL | David Muller Dentistry",
+  title: "Root Canal Therapy | St. John's NL | Dr. Muller Dentistry",
   description:
-    "Expert root canal treatment in St. John's, Newfoundland. Save your tooth, relieve pain, and restore oral health. Modern techniques and compassionate care. David Muller Dentistry.",
+    "Expert root canal treatment in St. John's, Newfoundland. Save your tooth, relieve pain, and restore oral health. Modern techniques and compassionate care. Dr. Muller Dentistry.",
   keywords: [
     "root canal St. John's",
     "root canal Newfoundland",
@@ -71,7 +71,7 @@ export default function RootCanalPage() {
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">
             Understanding the steps can help ease anxiety. Here’s what typically
-            happens during root canal therapy at David Muller Dentistry:
+            happens during root canal therapy at Dr. Muller Dentistry:
           </p>
           <ol className="list-decimal pl-6 text-muted-foreground space-y-3 mt-4">
             <li>
@@ -170,7 +170,7 @@ export default function RootCanalPage() {
             <div>
               <h3 className="font-medium text-foreground">Where can I get a root canal in St. John&apos;s or Newfoundland?</h3>
               <p className="mt-1 text-muted-foreground">
-                David Muller Dentistry provides root canal therapy at our St. John&apos;s location on Stavanger Drive. We welcome patients from across the St. John&apos;s metro area and Newfoundland and Labrador.
+                Dr. Muller Dentistry provides root canal therapy at our St. John&apos;s location on Stavanger Drive. We welcome patients from across the St. John&apos;s metro area and Newfoundland and Labrador.
               </p>
             </div>
           </div>
@@ -179,11 +179,11 @@ export default function RootCanalPage() {
             Why Choose Us for Root Canal Therapy in St. John&apos;s
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">
-            At David Muller Dentistry, root canal therapy is a central part of
+            At Dr. Muller Dentistry, root canal therapy is a central part of
             what we do. We combine experience, modern techniques, and a
             patient-first approach so you can keep your natural teeth and enjoy
             a healthy, comfortable smile. We serve patients from St. John&apos;s,
-            Mount Pearl, and across Newfoundland and Labrador.
+         and across Newfoundland and Labrador.
           </p>
         </div>
 
