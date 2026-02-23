@@ -14,8 +14,8 @@ export const Header = () => {
   const handleCloseMenu = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b-2 border-primary/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 dark:border-white/5 bg-background/60 backdrop-blur-xl supports-[backdrop-filter]:bg-background/40 shadow-sm transition-all duration-300">
+      <div className="container mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4">
         <Link
           href="/"
           className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
@@ -42,12 +42,12 @@ export const Header = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               {item.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="ml-2">
+          <Button asChild size="sm" className="ml-4 rounded-full px-6 shadow-md shadow-primary/20 transition-all hover:scale-105">
             <Link href="/contact">Book Appointment</Link>
           </Button>
         </nav>

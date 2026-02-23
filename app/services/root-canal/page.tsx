@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
@@ -19,16 +20,37 @@ export const metadata: Metadata = {
 export default function RootCanalPage() {
   return (
     <div className="flex flex-col">
-      <section className="border-b border-border/60 bg-muted/30 py-12">
-        <div className="container mx-auto max-w-6xl px-4">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Root Canal Therapy
-          </h1>
-          <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            Root canal therapy is a core focus of our practice. We use modern
-            techniques to save your tooth and keep your smile healthy—with care
-            and comfort in mind.
-          </p>
+      <section className="relative overflow-hidden border-b border-primary/10 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-24">
+        <div className="absolute top-0 right-0 -z-10 size-[600px] rounded-full bg-primary/10 blur-[150px]" />
+
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+            <div className="max-w-2xl">
+              <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
+                Specialized Treatment
+              </div>
+              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
+                Root Canal Therapy
+              </h1>
+              <p className="mt-6 text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
+                Root canal therapy is a core focus of our practice. We use modern
+                techniques to save your tooth and keep your smile healthy—with care
+                and comfort in mind.
+              </p>
+            </div>
+
+            <div className="group relative mx-auto w-full max-w-lg lg:max-w-none shadow-xl rounded-[2rem] overflow-hidden border border-primary/20 bg-background/50 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent mix-blend-overlay z-10 pointer-events-none transition-opacity duration-700 group-hover:opacity-70"></div>
+              <Image
+                src="/root-canal-hero.png"
+                alt="Advanced Root Canal Therapy"
+                width={800}
+                height={800}
+                className="object-cover w-full h-auto transform transition-transform duration-1000 group-hover:scale-105"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -66,51 +88,32 @@ export default function RootCanalPage() {
             our practice helps you avoid extraction and keep your natural smile.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
-            The Root Canal Process: Step by Step
+          <h2 className="text-3xl font-extrabold text-foreground mt-20 mb-10 text-center">
+            The Root Canal Process
           </h2>
-          <p className="text-muted-foreground leading-relaxed mt-2">
-            Understanding the steps can help ease anxiety. Here’s what typically
-            happens during root canal therapy at Dr. Muller Dentistry:
-          </p>
-          <ol className="list-decimal pl-6 text-muted-foreground space-y-3 mt-4">
-            <li>
-              <strong className="text-foreground">Examination and X-rays</strong> —
-              We examine the tooth and take X-rays to see the shape of the root
-              canals and any signs of infection.
-            </li>
-            <li>
-              <strong className="text-foreground">Anaesthesia</strong> — We
-              numb the area so you stay comfortable throughout the procedure.
-              Many patients report that the process feels similar to having a
-              filling.
-            </li>
-            <li>
-              <strong className="text-foreground">Access opening</strong> — A
-              small opening is made in the crown of the tooth to reach the pulp
-              chamber and root canals.
-            </li>
-            <li>
-              <strong className="text-foreground">Removal of pulp</strong> —
-              The infected or damaged pulp is carefully removed from the chamber
-              and canals.
-            </li>
-            <li>
-              <strong className="text-foreground">Cleaning and shaping</strong> —
-              The inside of the tooth is cleaned, disinfected, and shaped to
-              prepare for filling.
-            </li>
-            <li>
-              <strong className="text-foreground">Filling the canals</strong> —
-              The empty canals are filled with a biocompatible material and
-              sealed to prevent re-infection.
-            </li>
-            <li>
-              <strong className="text-foreground">Restoration</strong> — The
-              access opening is sealed. Often we recommend a crown to protect
-              the tooth and restore full function.
-            </li>
-          </ol>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: "Examination & X-rays", desc: "We examine the tooth and take X-rays to see the shape of the root canals and any signs of infection." },
+              { title: "Anaesthesia", desc: "We numb the area so you stay comfortable. Many patients report it feels similar to having a routine filling." },
+              { title: "Access Opening", desc: "A small opening is made in the crown of the tooth to reach the pulp chamber and root canals." },
+              { title: "Removal of Pulp", desc: "The infected or damaged pulp is carefully removed from the chamber and canals for deep cleaning." },
+              { title: "Cleaning & Shaping", desc: "The inside of the tooth is cleaned, disinfected, and shaped to prepare for the final filling." },
+              { title: "Filling & Sealing", desc: "The empty canals are filled with a biocompatible material and sealed to prevent any future re-infection." },
+              { title: "Restoration", desc: "The access opening is sealed. Often a crown is recommended to protect the tooth and restore full function." }
+            ].map((step, i) => (
+              <div key={i} className="group relative p-8 rounded-3xl border border-primary/10 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-xl">
+                <div className="absolute -top-4 -left-4 size-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow-lg">
+                  {i + 1}
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
           <p className="text-muted-foreground leading-relaxed mt-4">
             Root canal therapy may be completed in one or two visits, depending
             on the complexity of your case. We’ll explain your treatment plan
@@ -145,34 +148,57 @@ export default function RootCanalPage() {
             A restored root-canaled tooth can last a lifetime with proper care.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
-            Frequently Asked Questions About Root Canals
+          <h2 className="text-3xl font-extrabold text-foreground mt-20 mb-8 text-center">
+            Frequently Asked Questions
           </h2>
-          <div className="mt-4 space-y-6">
-            <div>
-              <h3 className="font-medium text-foreground">How long does a root canal take?</h3>
-              <p className="mt-1 text-muted-foreground">
+          <div className="mx-auto max-w-3xl space-y-4">
+            <details className="group rounded-2xl border border-primary/10 bg-card/50 p-6 backdrop-blur-sm open:bg-card/80 transition-all duration-300">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-foreground text-lg group-open:text-primary transition-colors">
+                How long does a root canal take?
+                <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-primary">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-300">
                 Most root canals take one to two visits, each typically between 60 and 90 minutes, depending on the tooth and complexity.
               </p>
-            </div>
-            <div>
-              <h3 className="font-medium text-foreground">Is a root canal better than pulling the tooth?</h3>
-              <p className="mt-1 text-muted-foreground">
+            </details>
+
+            <details className="group rounded-2xl border border-primary/10 bg-card/50 p-6 backdrop-blur-sm open:bg-card/80 transition-all duration-300">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-foreground text-lg group-open:text-primary transition-colors">
+                Is a root canal better than pulling the tooth?
+                <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-primary">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-300">
                 Saving your natural tooth with a root canal is usually the preferred option. It preserves your bite, avoids shifting of neighbouring teeth, and looks and feels like your own tooth once restored with a crown.
               </p>
-            </div>
-            <div>
-              <h3 className="font-medium text-foreground">Do I need a crown after a root canal?</h3>
-              <p className="mt-1 text-muted-foreground">
+            </details>
+
+            <details className="group rounded-2xl border border-primary/10 bg-card/50 p-6 backdrop-blur-sm open:bg-card/80 transition-all duration-300">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-foreground text-lg group-open:text-primary transition-colors">
+                Do I need a crown after a root canal?
+                <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-primary">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-300">
                 For back teeth (molars and premolars), a crown is usually recommended to protect the tooth from fracture. Front teeth may sometimes be restored with a filling. We’ll recommend what’s best for your case.
               </p>
-            </div>
-            <div>
-              <h3 className="font-medium text-foreground">Where can I get a root canal in St. John&apos;s or Newfoundland?</h3>
-              <p className="mt-1 text-muted-foreground">
+            </details>
+
+            <details className="group rounded-2xl border border-primary/10 bg-card/50 p-6 backdrop-blur-sm open:bg-card/80 transition-all duration-300">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-foreground text-lg group-open:text-primary transition-colors">
+                Where can I get a root canal in St. John&apos;s or Newfoundland?
+                <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-primary">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-4 duration-300">
                 Dr. Muller Dentistry provides root canal therapy at our St. John&apos;s location on Stavanger Drive. We welcome patients from across the St. John&apos;s metro area and Newfoundland and Labrador.
               </p>
-            </div>
+            </details>
           </div>
 
           <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
@@ -183,7 +209,7 @@ export default function RootCanalPage() {
             what we do. We combine experience, modern techniques, and a
             patient-first approach so you can keep your natural teeth and enjoy
             a healthy, comfortable smile. We serve patients from St. John&apos;s,
-         and across Newfoundland and Labrador.
+            and across Newfoundland and Labrador.
           </p>
         </div>
 

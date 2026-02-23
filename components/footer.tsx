@@ -5,29 +5,34 @@ import { SITE, NAV_MAIN, SERVICES } from "@/lib/site-config";
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-border bg-muted/40">
-      <div className="container mx-auto max-w-6xl px-4 py-12">
+    <footer className="relative border-t border-primary/10 bg-background overflow-hidden">
+      <div className="absolute top-0 left-1/2 -px-1/2 h-[1px] w-3/4 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+      <div className="absolute bottom-0 right-0 -z-10 size-[400px] translate-y-1/2 translate-x-1/2 bg-primary/5 rounded-full blur-[100px]"></div>
+
+      <div className="container mx-auto max-w-7xl px-4 py-16 md:py-20 relative z-10">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6 lg:col-span-1">
             <Link
               href="/"
-              className="flex items-center gap-2 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
+              className="group flex flex-col gap-3 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
               aria-label="Dr. Muller Dentistry - Home"
             >
-              <Image
-                src="/logo.png"
-                alt=""
-                width={40}
-                height={40}
-                className="h-10 w-10 object-contain invert"
-              />
-              <span className="font-semibold text-foreground">
+              <div className="p-3 bg-primary/10 rounded-2xl w-fit group-hover:bg-primary/20 transition-colors">
+                <Image
+                  src="/logo.png"
+                  alt="Dr. Muller Dentistry Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain dark:invert"
+                />
+              </div>
+              <span className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
                 Dr. Muller Dentistry
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs">
+            <p className="text-muted-foreground leading-relaxed max-w-xs">
               Quality dental care for St. John&apos;s and Newfoundland. Root canal
-              therapy, general dentistry, and more.
+              therapy, general dentistry, top-tier comfort and highly efficient procedures.
             </p>
           </div>
 

@@ -48,7 +48,6 @@ export default function RootLayout({
   return (
     <html lang="en-CA">
       <head>
-        <link rel="icon" href="/logo.png" sizes="any" />
         <JsonLd />
       </head>
       <body

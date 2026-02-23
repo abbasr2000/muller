@@ -13,9 +13,9 @@ import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Map & Reviews | Find Us | St. John's NL",
-  description: `Find David Muller Dentistry on the map. ${SITE.address}. Read Google reviews and follow us on Instagram. St. John's, Newfoundland.`,
+  description: `Find Dr. Muller Dentistry on the map. ${SITE.address}. Read Google reviews and follow us on Instagram. St. John's, Newfoundland.`,
   keywords: [
-    "David Muller Dentistry map",
+    "Dr. Muller Dentistry map",
     "dentist St. John's location",
     "Google reviews St. John's dentist",
   ],
@@ -29,14 +29,15 @@ const MAP_EMBED_SRC =
 export default function MapPage() {
   return (
     <div className="flex flex-col">
-      <section className="border-b border-border/60 bg-gradient-to-b from-primary/10 from-10% via-background to-background py-12">
-        <div className="container mx-auto max-w-6xl px-4">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+      <section className="relative overflow-hidden border-b border-primary/5 bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
+        <div className="absolute top-0 right-0 -z-10 size-[500px] rounded-full bg-primary/10 blur-[130px]" />
+        <div className="container mx-auto max-w-7xl px-4 text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
             Map & Reviews
           </h1>
-          <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
             Find us on Stavanger Drive, read what patients say on Google, and
-            follow along on Instagram.
+            follow along on Instagram. We&apos;re proud of the care we provide.
           </p>
         </div>
       </section>
@@ -53,7 +54,7 @@ export default function MapPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="David Muller Dentistry location on Google Maps"
+                title="Dr. Muller Dentistry location on Google Maps"
                 className="min-h-[320px] w-full"
               />
             </div>
@@ -137,96 +138,68 @@ export default function MapPage() {
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-muted/30 py-12">
-        <div className="container mx-auto max-w-6xl px-4">
-          <h2 className="text-2xl font-semibold text-foreground">
-            What Patients Say
-          </h2>
-          <p className="mt-2 text-muted-foreground max-w-xl">
-            We&apos;re grateful for every review. Read more on Google or leave your own experience.
-          </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="border-border/80 bg-card">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 text-amber-400" aria-hidden>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;Dr. Muller is a really calm, soothing and just hands down a really good dentist. I had to get a Root Canal recently done by him tbh I was a little bit nervous at first but when I sat in the chair and was told how the procedure works and put on some calming music or just any music you like I felt fine. He was that good he made me fall asleep in the dental chair lolol. The procedure I had done was completely painless.&rdquo;
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">— Austin Fowler</p>
-              </CardContent>
-            </Card>
-            <Card className="border-border/80 bg-card">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 text-amber-400" aria-hidden>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;I had an amazing experience with David. From the very first conversation, he was incredibly warm and welcoming, making every appointment something to genuinely look forward to. He offered thoughtful advice and guidance throughout the entire process, helping me with all of my dental needs.&rdquo;
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">— Hussain Ahmad</p>
-              </CardContent>
-            </Card>
-            <Card className="border-border/80 bg-card">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 text-amber-400" aria-hidden>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;My experience with Dr. Muller was very pleasant. I am usually very nervous going to the Dentist, but he put me at ease in no time. He was so gentle and showed great compassion during my visit. Great Guy, and a greater Dentist!&rdquo;
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">— Sharon McLean</p>
-              </CardContent>
-            </Card>
-            <Card className="border-border/80 bg-card">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 text-amber-400" aria-hidden>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;I&apos;ve known Dr. Muller since his training days, and it&apos;s been wonderful to see him grow into such a skilled and compassionate dentist. He truly cares about his patients and provides excellent care. Highly recommend him and his practice!&rdquo;
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">— Kenneth Liu</p>
-              </CardContent>
-            </Card>
-            <Card className="border-border/80 bg-card">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 text-amber-400" aria-hidden>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;Dr. Muller is extremely gifted in his work. For many years I have always had negative experiences visiting the dentist. That has now changed after my appointment with Dr. Muller. I highly recommend him to anyone who is looking for a dentist. He will get the job done!&rdquo;
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">— Chris Henein</p>
-              </CardContent>
-            </Card>
-            <Card className="border-border/80 bg-card">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 text-amber-400" aria-hidden>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;I had a great experience with Dr. Muller and his assistant! A display of friendliness and professionalism made for a smooth experience!&rdquo;
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">— Nick</p>
-              </CardContent>
-            </Card>
+      <section className="border-t border-border/10 bg-gradient-to-br from-muted/20 to-muted/40 py-24 relative overflow-hidden">
+        <div className="absolute top-1/2 left-0 -z-10 size-[600px] -translate-y-1/2 -translate-x-1/2 rounded-full bg-primary/5 blur-[120px]" />
+
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+              What Our Patients Say
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We&apos;re grateful for every review. Here are some experiences from our patients.
+            </p>
           </div>
-          <div className="mt-8 text-center">
-            <Button asChild variant="outline">
+
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                text: "Dr. Muller is a really calm, soothing and just hands down a really good dentist. I had to get a Root Canal recently done by him tbh I was a little bit nervous at first but when I sat in the chair and was told how the procedure works and put on some calming music... he made me fall asleep in the dental chair lolol. The procedure I had done was completely painless.",
+                author: "Austin Fowler"
+              },
+              {
+                text: "I had an amazing experience with David. From the very first conversation, he was incredibly warm and welcoming, making every appointment something to genuinely look forward to. He offered thoughtful advice and guidance throughout the entire process, helping me with all of my dental needs.",
+                author: "Hussain Ahmad"
+              },
+              {
+                text: "My experience with Dr. Muller was very pleasant. I am usually very nervous going to the Dentist, but he put me at ease in no time. He was so gentle and showed great compassion during my visit. Great Guy, and a greater Dentist!",
+                author: "Sharon McLean"
+              },
+              {
+                text: "I've known Dr. Muller since his training days, and it's been wonderful to see him grow into such a skilled and compassionate dentist. He truly cares about his patients and provides excellent care. Highly recommend him and his practice!",
+                author: "Kenneth Liu"
+              },
+              {
+                text: "Dr. Muller is extremely gifted in his work. For many years I have always had negative experiences visiting the dentist. That has now changed after my appointment with Dr. Muller. I highly recommend him to anyone who is looking for a dentist. He will get the job done!",
+                author: "Chris Henein"
+              },
+              {
+                text: "I had a great experience with Dr. Muller and his assistant! A display of friendliness and professionalism made for a smooth experience!",
+                author: "Nick"
+              }
+            ].map((review, i) => (
+              <Card key={i} className="group border-primary/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-primary/30 bg-card/60 backdrop-blur-md h-full flex flex-col">
+                <CardContent className="p-8 flex-1 flex flex-col">
+                  <div className="flex gap-1 text-amber-500 mb-6" aria-hidden>
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="size-5 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed italic flex-1 mb-6">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3 mt-auto pt-6 border-t border-border/50">
+                    <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
+                      {review.author.charAt(0)}
+                    </div>
+                    <p className="font-semibold text-foreground">— {review.author}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="mt-16 text-center">
+            <Button asChild size="lg" className="rounded-full px-8 shadow-lg shadow-primary/20">
               <a
                 href={SITE.googleReviewsUrl}
                 target="_blank"
