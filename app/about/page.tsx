@@ -100,7 +100,7 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                     <span className="size-2 rounded-full bg-secondary" />
-                    Fellowships & Specialization
+                    International Training and Awards in Implants and Oral Surgery
                   </h3>
                   <div className="p-6 rounded-2xl bg-background/50 border border-primary/5 space-y-4">
                     <p className="text-sm leading-relaxed">
