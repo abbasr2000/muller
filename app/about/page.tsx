@@ -47,7 +47,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
             Proudly serving St. John&apos;s and the greater Newfoundland and
-            Labrador community with quality dental care and expert root canal therapy.
+            Labrador community with quality dental care and pain-free root canal therapy.
           </p>
         </div>
       </section>
@@ -163,7 +163,7 @@ export default function AboutPage() {
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Root canal therapy is a core part of our practice. We use
-                modern techniques to make the procedure as absolutely comfortable as
+                modern techniques to make the procedure as absolutely pain-free as
                 possible.
               </p>
             </li>
