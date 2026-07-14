@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Dr. Muller Dentistry",
-  tagline: "Quality dental care in St. John's, Newfoundland",
+  name: "Dr. Muller Dentistry St. John's",
+  tagline: "Quality implants, root canals, and family dental care in St. John's, Newfoundland",
   address: "386 Stavanger Dr, St. John's, NL A1A 5M9",
   city: "St. John's",
   province: "Newfoundland and Labrador",
@@ -9,6 +9,7 @@ export const SITE = {
   email: "drmullerdentistry@gmail.com",
   hours: "Monday to Saturday 8:00 AM – 7:30 PM, Sundays By Appoinment Only"
     Only office in Newfoundland with 24/7 Access to Dentist via SMS/Calls for questions, concerns, emergencies",
+  hours: "Monday to Saturday 8:30 AM – 7:00 PM, Sundays By Appoinment Only",
   googlePlaceId: "ChIJFS-nL7W9DEsRgUonFckNA3Y",
   mapUrl:
     "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
@@ -24,7 +25,7 @@ export type ServiceSlug =
   | "cleanings-checkups"
   | "fillings"
   | "extractions"
-  | "crowns-bridges"
+  | "crowns-bridges-dentures"
   | "dental-implants"
   | "cosmetic-dentistry"
   | "emergency-dental";
