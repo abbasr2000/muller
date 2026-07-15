@@ -48,7 +48,7 @@ export default function ImplantPlacementPage() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-primary/10 shadow-xl bg-card">
             <img
-              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80"
+              src="/implant-restorations.jpg"
               alt="Dental implant placement in a modern clinic"
               className="h-full w-full object-cover"
             />

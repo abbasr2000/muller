@@ -18,12 +18,10 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="max-w-2xl text-center lg:text-left">
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
-                Quality Dental Care in St. John&apos;s, Newfoundland
+                Quality Dental Care, Implants, and Root Canal Therapy in St. John&apos;s
               </h1>
               <p className="mt-6 text-lg text-muted-foreground sm:text-xl text-balance leading-relaxed">
-                Root canal therapy, general dentistry, and comprehensive
-                dental services for you and your family. Proudly serving St.
-                John&apos;s and the greater Newfoundland area.
+                From quality implants and root canal therapy to general dentistry and family care, we provide trusted dental treatment with comfort, expertise, and modern technology for patients across St. John&apos;s and Newfoundland.
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <Button asChild size="lg" className="gap-2 rounded-full h-12 px-8 text-base shadow-lg shadow-primary/20 transition-all hover:scale-105">
@@ -48,6 +46,36 @@ export default function HomePage() {
                 className="object-cover w-full h-auto transform transition-transform duration-1000 group-hover:scale-105"
                 priority
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto max-w-7xl px-4 py-8 md:py-12">
+        <div className="rounded-[2rem] border border-primary/15 bg-gradient-to-br from-primary/10 via-background to-primary/5 p-8 shadow-sm md:p-10">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Featured Care</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-foreground sm:text-4xl">
+                Implants, root canals, and modern dentistry in one place
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                Whether you need implant placement, implant restoration, or expert root canal therapy, our team is here to help you smile confidently again.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <Link href="/services/dental-implants" className="rounded-2xl border border-primary/15 bg-background/70 p-4 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
+                <p className="text-sm font-semibold text-foreground">Dental Implants</p>
+                <p className="mt-2 text-sm text-muted-foreground">Permanent tooth replacement with a natural look.</p>
+              </Link>
+              <Link href="/services/implant-placement" className="rounded-2xl border border-primary/15 bg-background/70 p-4 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
+                <p className="text-sm font-semibold text-foreground">Implant Placement</p>
+                <p className="mt-2 text-sm text-muted-foreground">Precise implant surgery and guided planning.</p>
+              </Link>
+              <Link href="/services/root-canal" className="rounded-2xl border border-primary/15 bg-background/70 p-4 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
+                <p className="text-sm font-semibold text-foreground">Root Canal Therapy</p>
+                <p className="mt-2 text-sm text-muted-foreground">Save your natural tooth with comfort-focused care.</p>
+              </Link>
             </div>
           </div>
         </div>

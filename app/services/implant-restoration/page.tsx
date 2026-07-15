@@ -48,7 +48,7 @@ export default function ImplantRestorationPage() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-primary/10 shadow-xl bg-card">
             <img
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
+              src="/implant-restorations.jpg"
               alt="Dental restoration work on an implant crown"
               className="h-full w-full object-cover"
             />
