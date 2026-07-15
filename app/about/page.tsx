@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About Dr. Muller | Dentist St. John's Newfoundland",
-  description: `Meet Dr. David Muller, DDS – University of Toronto trained, ICOI & AAIP Fellow. With extensive training in root canal therapy and dental care in St. John's, NL. ${SITE.address}.`,
+  description: `Meet Dr. David Muller, DDS – University of Toronto trained, ICOI & AAIP Fellow. With extensive training in implants, wisdom teeth extractions, root canal therapy and dental care in St. John's, NL. ${SITE.address}.`,
   alternates: {
     canonical: "/about",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "About Dr. Muller | Dentist St. John's Newfoundland",
-    description: "Meet Dr. David Muller, DDS – University of Toronto trained, ICOI & AAIP Fellow. With extensive training in root canal therapy and dental care.",
+    description: "Meet Dr. David Muller, DDS – University of Toronto trained, ICOI & AAIP Fellow. With extensive training in implants, wisdom teeth extractions, root canal therapy and dental care.",
     url: "https://drmullerdentistry.com/about",
     siteName: "Dr. Muller Dentistry",
     locale: "en_CA",
@@ -47,7 +47,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
             Proudly serving St. John&apos;s and the greater Newfoundland and
-            Labrador community with quality dental care and pain-free root canal therapy.
+            Labrador community with quality dental care, implants, wisdom teeth extractions, and pain-free root canal therapy.
           </p>
         </div>
       </section>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               At Dr. Muller Dentistry, we believe in a modern, patient-centred
               approach to dental care. Located at 386 Stavanger Dr in St.
               John&apos;s, we offer a full range of services with a particular
-              focus on root canal therapy, helping our patients keep their
+              focus on implants, wisdom teeth extractions with sedation, root canal treatment with sedation, helping our patients keep their
               natural teeth and maintain healthy smiles for life.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">

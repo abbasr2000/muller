@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   // Compress responses for faster load times
   compress: true,
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
+
   // Security & performance headers
   async headers() {
     return [
