@@ -48,7 +48,7 @@ export const Header = () => {
             </Link>
           ))}
           <Button asChild size="sm" className="ml-4 rounded-full px-6 shadow-md shadow-primary/20 transition-all hover:scale-105">
-            <Link href="/contact">Book Appointment</Link>
+            <Link href="/book">Book Appointment</Link>
           </Button>
         </nav>
 
@@ -81,7 +81,7 @@ export const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={handleCloseMenu} className="mt-2">
+            <Link href="/book" onClick={handleCloseMenu} className="mt-2">
               <Button className="w-full">Book Appointment</Button>
             </Link>
           </nav>

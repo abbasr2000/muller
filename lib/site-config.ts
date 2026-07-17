@@ -18,6 +18,20 @@ export const SITE = {
   instagramUrl: "https://instagram.com/drmullerdentistry",
 } as const;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// BOOKING FORM SETUP  ← paste your Web3Forms key on the line below.
+//
+// The /book page emails each appointment request to drmullerdentistry@gmail.com.
+// It needs a FREE access key (takes ~2 minutes, no account/password):
+//   1. Go to https://web3forms.com
+//   2. Enter drmullerdentistry@gmail.com and press the button
+//   3. Check that inbox for the "access key" (a long code with dashes)
+//   4. Replace the text between the quotes below with that key, then save.
+//
+// Until a real key is pasted in, the form works but submissions won't send.
+// ─────────────────────────────────────────────────────────────────────────────
+export const WEB3FORMS_ACCESS_KEY = "5008b12a-8b19-4f09-be53-012da4c7f3ac";
+
 export type ServiceSlug =
   | "root-canal"
   | "general-dentistry"
