@@ -179,6 +179,12 @@ export default function RootCanalPage() {
         </div>
       </section>
 
+      <section className="border-y border-primary/10 bg-secondary/20 py-8">
+        <div className="container mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 md:flex-row md:items-center">
+          <div><p className="text-sm font-semibold uppercase tracking-wider text-primary">Technology that supports your care</p><h2 className="mt-1 text-2xl font-bold text-foreground">Surgical & endodontic microscopes</h2><p className="mt-1 max-w-3xl text-muted-foreground">Magnification and illumination can help us see fine details during assessment and treatment.</p></div>
+          <Button asChild variant="outline" className="rounded-full"><Link href="/technology#microscope">Explore our technology</Link></Button>
+        </div>
+      </section>
       <section className="container mx-auto max-w-6xl px-4 py-12">
         <div className="prose prose-neutral dark:prose-invert max-w-none">
           <h2 className="text-2xl font-semibold text-foreground mt-8 scroll-mt-16">
