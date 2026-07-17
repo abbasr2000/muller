@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export type RestorationContent = {
+  slug: string;
   eyebrow: string; title: string; description: string; image: string; imageAlt: string;
   overviewTitle: string; overview: string[];
   benefits: { title: string; description: string }[];
@@ -15,7 +16,39 @@ export type RestorationContent = {
 };
 
 export function RestorationPage({ content }: { content: RestorationContent }) {
+  const base = "https://drmullerdentistry.com";
+  const url = `${base}/services/${content.slug}`;
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: base },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${base}/services` },
+      { "@type": "ListItem", position: 3, name: content.title, item: url },
+    ],
+  };
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: content.title,
+    description: content.description,
+    url,
+    provider: { "@type": "Dentist", "@id": `${base}/#dentist` },
+    areaServed: "St. John's, Newfoundland and Labrador",
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: content.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
   return <div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <section className="relative overflow-hidden border-b border-primary/10 bg-gradient-to-br from-primary/5 via-background to-secondary/10 py-16 md:py-24">
       <div className="container mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
         <div><p className="mb-5 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">{content.eyebrow}</p>
