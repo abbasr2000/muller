@@ -6,17 +6,50 @@ export const SITE = {
   province: "Newfoundland and Labrador",
   postalCode: "A1A 5M9",
   phone: "(709) 400-7474, Text:(709)-700-1300",
+  // Clean, single-purpose values so tel:/sms: links and labels stay correct.
+  phoneDisplay: "(709) 400-7474",
+  textDisplay: "(709) 700-1300",
+  phoneHref: "+17094007474",
+  textHref: "+17097001300",
   email: "drmullerdentistry@gmail.com",
   hours:
     "Monday to Saturday 8:30 AM – 7:00 PM, Sundays By Appointment Only. Only office in Newfoundland with 24/7 access to a dentist via SMS/calls for questions, concerns, and emergencies.",
   googlePlaceId: "ChIJFS-nL7W9DEsRgUonFckNA3Y",
+  // Maps URLs API — works on desktop web and mobile (iOS/Android Maps).
+  // The old `?q=place_id:` format often fails to open the listing on phones.
   mapUrl:
-    "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
-  // Google Business Profile URL using Place ID - links directly to reviews
+    "https://www.google.com/maps/search/?api=1&query=Dr+Muller+Dentistry+386+Stavanger+Dr+St+John's+NL&query_place_id=ChIJFS-nL7W9DEsRgUonFckNA3Y",
   googleReviewsUrl:
-    "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
+    "https://search.google.com/local/reviews?placeid=ChIJFS-nL7W9DEsRgUonFckNA3Y",
+  googleWriteReviewUrl:
+    "https://search.google.com/local/writereview?placeid=ChIJFS-nL7W9DEsRgUonFckNA3Y",
+  mapEmbedSrc:
+    "https://www.google.com/maps?q=386+Stavanger+Dr,+St+John's,+NL+A1A+5M9&output=embed&zoom=15",
   instagramUrl: "https://instagram.com/drmullerdentistry",
 } as const;
+
+// Structured opening hours for display (e.g. the location hours table).
+export const OFFICE_HOURS: Array<{ day: string; hours: string }> = [
+  { day: "Monday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Tuesday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Wednesday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Thursday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Friday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Saturday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Sunday", hours: "By appointment only" },
+];
+
+// Quick trust signals shown across the site (top strip on the homepage).
+export const TRUST_POINTS: string[] = [
+  "Open Monday–Saturday",
+  "24/7 dentist access by call or text",
+  "Same-day emergencies",
+  "New patients welcome",
+  "Direct billing to all insurers",
+  "CDCP patients welcome",
+  "Oral sedation available",
+  "Free on-site parking",
+];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BOOKING FORM SETUP  ← paste your Web3Forms key on the line below.
@@ -44,6 +77,7 @@ export type ServiceSlug =
   | "implant-supported-overdentures"
   | "all-on-4-all-on-x"
   | "cosmetic-dentistry"
+  | "oral-sedation"
   | "emergency-dental";
 
 export const SERVICES: Array<{
@@ -110,6 +144,12 @@ export const SERVICES: Array<{
       shortDescription: "Whitening, veneers, and smile makeovers in St. John's.",
     },
     {
+      slug: "oral-sedation",
+      title: "Oral Sedation",
+      shortDescription:
+        "Relaxing oral sedation to keep you calm and comfortable during extractions, wisdom teeth removal, and root canals.",
+    },
+    {
       slug: "emergency-dental",
       title: "Emergency Dental",
       shortDescription: "Same-day emergency care when you need it most.",
@@ -123,6 +163,7 @@ export const NAV_MAIN = [
   { href: "/services/root-canal", label: "Root Canal" },
   { href: "/technology", label: "Technology" },
   { href: "/map", label: "Map & Reviews" },
+  { href: "/insurance", label: "Insurance" },
   { href: "/blog", label: "Blog" },
   { href: "/book", label: "Contact" },
 ] as const;

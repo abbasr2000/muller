@@ -107,15 +107,15 @@ export default function ServicePage() {
             Cosmetic Dentistry
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed text-balance">
-            Professional whitening, custom veneers, and total smile makeovers in St. John's.
+            Professional whitening, custom veneers, and total smile makeovers in St. John&apos;s.
           </p>
         </div>
       </section>
 
       <section className="container mx-auto max-w-4xl px-4 py-16 md:py-24">
         <div className="prose prose-neutral dark:prose-invert prose-lg max-w-none text-muted-foreground leading-relaxed">
-          <p className="mb-6">Your smile is often the very first thing people notice about you, and it plays a massive role in your self-confidence. If you find yourself hiding your teeth in photos or when laughing because of stubborn stains, minor chips, noticeable gaps, or slight misalignment, our advanced cosmetic dentistry services can help you achieve the bright, beautiful smile you've always wanted.</p>
-          <p className="mb-6">Cosmetic dentistry has evolved significantly over the years, and today's treatments are more effective, natural-looking, and accessible than ever before. Whether you are looking for a quick and brilliant professional teeth whitening treatment before a major life event, or a complete structural transformation using custom-crafted porcelain veneers, we have the technology to make it happen.</p>
+          <p className="mb-6">Your smile is often the very first thing people notice about you, and it plays a massive role in your self-confidence. If you find yourself hiding your teeth in photos or when laughing because of stubborn stains, minor chips, noticeable gaps, or slight misalignment, our advanced cosmetic dentistry services can help you achieve the bright, beautiful smile you&apos;ve always wanted.</p>
+          <p className="mb-6">Cosmetic dentistry has evolved significantly over the years, and today&apos;s treatments are more effective, natural-looking, and accessible than ever before. Whether you are looking for a quick and brilliant professional teeth whitening treatment before a major life event, or a complete structural transformation using custom-crafted porcelain veneers, we have the technology to make it happen.</p>
           <p className="mb-6">Dr. Muller treats cosmetic dentistry as an art form combined with clinical precision. We start every cosmetic journey with a detailed, pressure-free consultation. We will discuss your specific aesthetic goals, take detailed photographs and impressions, and use these to design a custom smile makeover. Throughout the process, we use the highest-grade dental ceramics and modern bonding agents to ensure that your new smile is not only stunningly beautiful, but also durable and fully functional.</p>
         </div>
 
