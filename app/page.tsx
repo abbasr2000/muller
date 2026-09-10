@@ -1,15 +1,55 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin, Phone, Stethoscope, Star, Instagram, ExternalLink } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Stethoscope, Star, Instagram, ExternalLink, Clock, CreditCard, ShieldCheck, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { SITE, SERVICES } from "@/lib/site-config";
+import { SITE, SERVICES, OFFICE_HOURS } from "@/lib/site-config";
+import { TrustBar } from "@/components/trust-bar";
+import { SymptomPicker } from "@/components/symptom-picker";
+
+const HOME_FAQS = [
+  {
+    q: "Are you accepting new patients?",
+    a: "Yes — we welcome new patients of all ages from across St. John's and Newfoundland. You can request a visit through our online form or call or text us, and we'll help you find a time that works.",
+  },
+  {
+    q: "Do you offer direct billing and accept the CDCP?",
+    a: "Yes. We offer direct billing to all major insurance providers and are a participating provider for the Canadian Dental Care Plan (CDCP). Our team is happy to help you understand your coverage before treatment.",
+  },
+  {
+    q: "Do you see dental emergencies the same day?",
+    a: "We keep room in our schedule for urgent problems and do our best to see dental emergencies the same day. If you have severe pain, swelling, or a knocked-out or broken tooth, call or text us as early as you can.",
+  },
+  {
+    q: "Can I reach a dentist after hours?",
+    a: "Yes. We're the only office in Newfoundland with 24/7 access to a dentist by call or text for questions, concerns, and emergencies.",
+  },
+  {
+    q: "Is the appointment form a confirmed booking?",
+    a: "Not quite — sending the form is a request, not a locked-in appointment. Once we receive it, our team will call or text you to confirm the date and time. If it's urgent, calling us is the fastest way to be seen.",
+  },
+];
 
 export default function HomePage() {
   const otherServices = SERVICES.filter((s) => !s.featured).slice(0, 4);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: HOME_FAQS.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <TrustBar />
       <section className="relative overflow-hidden border-b border-primary/20 bg-gradient-to-b from-primary/15 via-primary/5 to-background">
         <div className="absolute -top-40 -right-40 -z-10 size-[500px] rounded-full bg-primary/20 blur-[120px]" />
         <div className="absolute top-20 -left-20 -z-10 size-[400px] rounded-full bg-secondary/20 blur-[100px]" />
@@ -53,36 +93,72 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SymptomPicker />
+
       <section className="container mx-auto max-w-6xl px-4 py-16">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
-            Our Location
+            Visit Us in St. John&apos;s
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Conveniently located on Stavanger Drive in St. John&apos;s, NL.
+            Conveniently located on Stavanger Drive, with free on-site parking.
           </p>
         </div>
-        <div className="mt-8 flex flex-col items-center gap-6 rounded-2xl border border-primary/20 bg-card p-8 text-center shadow-sm sm:flex-row sm:justify-center sm:gap-10">
-          <a
-            href={SITE.mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
-          >
-            <MapPin className="size-5 shrink-0" aria-hidden />
-            <span className="text-left">
-              {SITE.address}
-              <br />
-              {SITE.city}, NL {SITE.postalCode}
-            </span>
-          </a>
-          <a
-            href={`tel:${SITE.phone.replace(/\D/g, "")}`}
-            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
-          >
-            <Phone className="size-5 shrink-0" aria-hidden />
-            {SITE.phone}
-          </a>
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          <div className="flex flex-col gap-6 rounded-2xl border border-primary/20 bg-card p-8 shadow-sm">
+            <a
+              href={SITE.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
+            >
+              <MapPin className="size-5 shrink-0 mt-0.5 text-primary" aria-hidden />
+              <span>
+                {SITE.address}
+                <br />
+                {SITE.city}, NL {SITE.postalCode}
+              </span>
+            </a>
+            <a
+              href={`tel:${SITE.phoneHref}`}
+              className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
+            >
+              <Phone className="size-5 shrink-0 text-primary" aria-hidden />
+              {SITE.phone}
+            </a>
+            <div className="flex items-start gap-3 text-muted-foreground">
+              <Car className="size-5 shrink-0 mt-0.5 text-primary" aria-hidden />
+              <span>Free on-site parking, with accessible entry from Stavanger Drive.</span>
+            </div>
+            <Button asChild className="mt-2 w-fit rounded-full">
+              <a href={SITE.mapUrl} target="_blank" rel="noopener noreferrer">
+                <MapPin className="size-4" aria-hidden />
+                Get Directions
+              </a>
+            </Button>
+          </div>
+          <div className="rounded-2xl border border-primary/20 bg-card p-8 shadow-sm">
+            <h3 className="flex items-center gap-2 text-lg font-bold text-foreground">
+              <Clock className="size-5 text-primary" aria-hidden />
+              Office Hours
+            </h3>
+            <table className="mt-4 w-full text-sm">
+              <tbody>
+                {OFFICE_HOURS.map((row) => (
+                  <tr key={row.day} className="border-b border-border/60 last:border-0">
+                    <th scope="row" className="py-2.5 text-left font-medium text-foreground">
+                      {row.day}
+                    </th>
+                    <td className="py-2.5 text-right text-muted-foreground">{row.hours}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+              We&apos;re the only office in Newfoundland with 24/7 access to a
+              dentist by call or text for questions, concerns, and emergencies.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -190,6 +266,59 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-y border-primary/10 bg-gradient-to-br from-secondary/20 via-background to-background py-20 md:py-24">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+              Coverage &amp; access
+            </p>
+            <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+              We work with your coverage
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              Getting the care you need shouldn&apos;t mean guessing about the
+              paperwork. Our team helps you make sense of your options.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="rounded-[2rem] border border-primary/10 bg-card/60 p-8 shadow-sm backdrop-blur-sm">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <CreditCard className="size-6" aria-hidden />
+              </div>
+              <h3 className="mt-5 text-xl font-bold text-foreground">
+                Direct billing to all insurers
+              </h3>
+              <p className="mt-2 text-muted-foreground leading-relaxed">
+                We submit claims directly to all major insurance providers, so in
+                most cases you only pay any remaining balance after your plan pays
+                its portion.
+              </p>
+            </div>
+            <div className="rounded-[2rem] border border-primary/10 bg-card/60 p-8 shadow-sm backdrop-blur-sm">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <ShieldCheck className="size-6" aria-hidden />
+              </div>
+              <h3 className="mt-5 text-xl font-bold text-foreground">
+                Canadian Dental Care Plan (CDCP)
+              </h3>
+              <p className="mt-2 text-muted-foreground leading-relaxed">
+                We&apos;re a participating CDCP provider and bill directly for
+                eligible patients. Bring your details and we&apos;ll walk you
+                through how it applies to your care.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <Button asChild size="lg" className="rounded-full px-8">
+              <Link href="/insurance">
+                Insurance &amp; Direct Billing
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-primary/15 bg-primary/5 py-10">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
@@ -280,6 +409,33 @@ export default function HomePage() {
               </Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto max-w-3xl px-4 py-20 md:py-24">
+        <div className="mx-auto max-w-2xl text-center mb-10">
+          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Quick answers about new patients, hours, emergencies, and coverage.
+          </p>
+        </div>
+        <div className="space-y-4">
+          {HOME_FAQS.map((item) => (
+            <details
+              key={item.q}
+              className="group rounded-2xl border border-primary/10 bg-card/50 p-6 backdrop-blur-sm open:bg-card/80 transition-all duration-300 shadow-sm"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-foreground text-lg group-open:text-primary transition-colors">
+                <span className="pr-6">{item.q}</span>
+                <span className="shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary">
+                  <ArrowRight className="size-5 rotate-90" aria-hidden />
+                </span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{item.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
