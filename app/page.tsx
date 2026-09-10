@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { SITE, SERVICES, OFFICE_HOURS } from "@/lib/site-config";
 import { TrustBar } from "@/components/trust-bar";
 import { SymptomPicker } from "@/components/symptom-picker";
+import { ClinicMap } from "@/components/clinic-map";
 
 const HOME_FAQS = [
   {
@@ -28,10 +29,22 @@ const HOME_FAQS = [
     q: "Is the appointment form a confirmed booking?",
     a: "Not quite — sending the form is a request, not a locked-in appointment. Once we receive it, our team will call or text you to confirm the date and time. If it's urgent, calling us is the fastest way to be seen.",
   },
+  {
+    q: "Do you offer oral sedation?",
+    a: "Yes. Relaxing oral sedation is available to help you stay calm and comfortable during extractions, wisdom teeth removal, and root canal therapy. Ask us when you book.",
+  },
 ];
 
 export default function HomePage() {
-  const otherServices = SERVICES.filter((s) => !s.featured).slice(0, 4);
+  const homeServiceSlugs = [
+    "oral-sedation",
+    "emergency-dental",
+    "dental-implants",
+    "extractions",
+  ] as const;
+  const otherServices = homeServiceSlugs
+    .map((slug) => SERVICES.find((service) => service.slug === slug))
+    .filter((service): service is (typeof SERVICES)[number] => Boolean(service));
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -61,9 +74,9 @@ export default function HomePage() {
                 Quality Dental Care in St. John&apos;s, Newfoundland
               </h1>
               <p className="mt-6 text-lg text-muted-foreground sm:text-xl text-balance leading-relaxed">
-                Root canal therapy, general dentistry, and comprehensive
-                dental services for you and your family. Proudly serving St.
-                John&apos;s and the greater Newfoundland area.
+                Root canal therapy, oral sedation, general dentistry, and
+                comprehensive dental services for you and your family. Proudly
+                serving St. John&apos;s and the greater Newfoundland area.
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <Button asChild size="lg" className="gap-2 rounded-full h-12 px-8 text-base shadow-lg shadow-primary/20 transition-all hover:scale-105">
@@ -119,6 +132,9 @@ export default function HomePage() {
                 {SITE.city}, NL {SITE.postalCode}
               </span>
             </a>
+            <div className="overflow-hidden rounded-xl border border-primary/15">
+              <ClinicMap height={180} />
+            </div>
             <a
               href={`tel:${SITE.phoneHref}`}
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
@@ -200,6 +216,7 @@ export default function HomePage() {
                     "Pain relief and infection treatment",
                     "Preservation of your natural tooth",
                     "Modern anaesthesia for maximum comfort",
+                    "Oral sedation available if you prefer to stay extra relaxed",
                     "Efficient procedures"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-muted-foreground">
@@ -219,6 +236,67 @@ export default function HomePage() {
                 <Button asChild variant="outline" size="lg" className="rounded-full px-8 w-full sm:w-auto hover:bg-primary/5">
                   <Link href="/services/root-canal">Comprehensive Guide</Link>
                 </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-primary/10 bg-primary/5 py-16 md:py-24">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+                Comfort-focused care
+              </p>
+              <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl md:text-5xl">
+                Oral Sedation
+              </h2>
+              <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+                Nervous about treatment? Relaxing oral sedation helps you stay
+                calm and comfortable during extractions, wisdom teeth removal,
+                and root canal therapy.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Taken by mouth — no IV required to begin",
+                  "Paired with local anaesthesia so you stay fully numb",
+                  "A popular option for anxious patients and longer visits",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                    <span className="rounded-full bg-primary/10 p-1">
+                      <ArrowRight className="size-4 text-primary" aria-hidden />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" className="rounded-full px-8 shadow-lg shadow-primary/20">
+                  <Link href="/services/oral-sedation">Learn about oral sedation</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full px-8">
+                  <Link href="/book">Ask about sedation</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="rounded-[2rem] border border-primary/15 bg-card/70 p-8 shadow-lg">
+              <h3 className="text-xl font-bold text-foreground">Best suited for</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  { title: "Tooth extractions", href: "/services/extractions" },
+                  { title: "Wisdom teeth removal", href: "/services/extractions" },
+                  { title: "Root canal therapy", href: "/services/root-canal" },
+                ].map((item) => (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="flex items-center justify-between rounded-2xl border border-primary/10 bg-background/70 px-5 py-4 font-medium text-foreground transition-colors hover:border-primary/30 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {item.title}
+                    <ArrowRight className="size-4 text-primary" aria-hidden />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -322,8 +400,10 @@ export default function HomePage() {
       <section className="border-y border-primary/15 bg-primary/5 py-10">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
-            <Link
-              href="/map"
+            <a
+              href={SITE.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 rounded-xl border border-primary/20 bg-card px-6 py-4 shadow-sm hover:border-primary/40 hover:shadow transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <Star className="size-8 text-amber-400 fill-amber-400 shrink-0" aria-hidden />
@@ -331,8 +411,8 @@ export default function HomePage() {
                 <span className="font-semibold text-foreground">Google Reviews</span>
                 <p className="text-sm text-muted-foreground">See what patients say</p>
               </div>
-              <ArrowRight className="size-4 text-primary shrink-0" aria-hidden />
-            </Link>
+              <ExternalLink className="size-4 text-primary shrink-0" aria-hidden />
+            </a>
             <a
               href={SITE.instagramUrl}
               target="_blank"
@@ -403,10 +483,10 @@ export default function HomePage() {
           </div>
           <div className="mt-8 text-center">
             <Button asChild variant="outline" className="gap-2">
-              <Link href="/map">
-                Read all reviews
+              <a href={SITE.googleReviewsUrl} target="_blank" rel="noopener noreferrer">
+                Read all reviews on Google
                 <ExternalLink className="size-4" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -447,9 +527,9 @@ export default function HomePage() {
                 New Patients Welcome
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Whether you need a routine cleaning, root canal therapy, or
-                emergency care, we&apos;re here for you. Serving St. John&apos;s,
-                Mount Pearl, and the greater Newfoundland area.
+                Whether you need a routine cleaning, root canal therapy, oral
+                sedation, or emergency care, we&apos;re here for you. Serving St.
+                John&apos;s, Mount Pearl, and the greater Newfoundland area.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4 md:justify-start">
                 <Button asChild>

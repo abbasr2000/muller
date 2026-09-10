@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ClinicMap } from "@/components/clinic-map";
 import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -40,11 +41,6 @@ export const metadata: Metadata = {
 
 };
 
-// Google Maps embed - shows the map with the place marked
-// Standard embed format that works reliably without API key
-const MAP_EMBED_SRC =
-  `https://www.google.com/maps?q=386+Stavanger+Dr,+St+John's,+NL+A1A+5M9&output=embed&zoom=15`;
-
 export default function MapPage() {
   return (
     <div className="flex flex-col">
@@ -66,17 +62,9 @@ export default function MapPage() {
           <div className="lg:col-span-3">
             <div className="group overflow-hidden rounded-[2rem] border border-primary/20 shadow-2xl bg-card/60 backdrop-blur-md p-2">
               <div className="overflow-hidden rounded-[1.5rem]">
-                <iframe
-                  src={MAP_EMBED_SRC}
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Dr. Muller Dentistry location on Google Maps"
-                  className="w-full grayscale-[20%] contrast-125 transition-all duration-700 group-hover:grayscale-0"
-                />
+                <div className="grayscale-[20%] contrast-125 transition-all duration-700 group-hover:grayscale-0">
+                  <ClinicMap height={450} />
+                </div>
               </div>
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-4">
@@ -117,7 +105,7 @@ export default function MapPage() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full bg-background/50 h-12 w-full text-base backdrop-blur-sm border-primary/20 hover:bg-primary/5">
-                  <a href={SITE.googleReviewsUrl} target="_blank" rel="noopener noreferrer" aria-label="Leave a review on Google">
+                  <a href={SITE.googleWriteReviewUrl} target="_blank" rel="noopener noreferrer" aria-label="Leave a review on Google">
                     <MessageCircle className="mr-2 size-4" aria-hidden />
                     Leave a review
                   </a>
@@ -151,7 +139,7 @@ export default function MapPage() {
         </div>
       </section>
 
-      <section className="border-t border-border/10 bg-gradient-to-br from-muted/20 to-muted/40 py-24 relative overflow-hidden">
+      <section className="border-t border-border/10 bg-gradient-to-br from-muted/20 to-muted/40 py-24 pb-32 relative overflow-hidden">
         <div className="absolute top-1/2 left-0 -z-10 size-[600px] -translate-y-1/2 -translate-x-1/2 rounded-full bg-primary/5 blur-[120px]" />
 
         <div className="container mx-auto max-w-7xl px-4">

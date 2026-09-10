@@ -9,6 +9,7 @@ import {
   Wrench,
   AlignHorizontalDistributeCenter,
   CalendarCheck,
+  HeartPulse,
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
@@ -84,6 +85,16 @@ const CONCERNS: Concern[] = [
       "Regular cleanings and checkups keep your smile healthy and catch small issues before they become big ones. New patients are always welcome.",
     href: "/services/cleanings-checkups",
     cta: "Explore cleanings & checkups",
+  },
+  {
+    id: "anxiety",
+    label: "Dental anxiety",
+    icon: HeartPulse,
+    headline: "Stay calm with oral sedation",
+    description:
+      "If dental visits make you nervous, relaxing oral sedation can keep you comfortable during extractions, wisdom teeth removal, and root canals.",
+    href: "/services/oral-sedation",
+    cta: "Explore oral sedation",
   },
 ];
 

@@ -15,11 +15,16 @@ export const SITE = {
   hours:
     "Monday to Saturday 8:30 AM – 7:00 PM, Sundays By Appointment Only. Only office in Newfoundland with 24/7 access to a dentist via SMS/calls for questions, concerns, and emergencies.",
   googlePlaceId: "ChIJFS-nL7W9DEsRgUonFckNA3Y",
+  // Maps URLs API — works on desktop web and mobile (iOS/Android Maps).
+  // The old `?q=place_id:` format often fails to open the listing on phones.
   mapUrl:
-    "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
-  // Google Business Profile URL using Place ID - links directly to reviews
+    "https://www.google.com/maps/search/?api=1&query=Dr+Muller+Dentistry+386+Stavanger+Dr+St+John's+NL&query_place_id=ChIJFS-nL7W9DEsRgUonFckNA3Y",
   googleReviewsUrl:
-    "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
+    "https://search.google.com/local/reviews?placeid=ChIJFS-nL7W9DEsRgUonFckNA3Y",
+  googleWriteReviewUrl:
+    "https://search.google.com/local/writereview?placeid=ChIJFS-nL7W9DEsRgUonFckNA3Y",
+  mapEmbedSrc:
+    "https://www.google.com/maps?q=386+Stavanger+Dr,+St+John's,+NL+A1A+5M9&output=embed&zoom=15",
   instagramUrl: "https://instagram.com/drmullerdentistry",
 } as const;
 
@@ -42,6 +47,7 @@ export const TRUST_POINTS: string[] = [
   "New patients welcome",
   "Direct billing to all insurers",
   "CDCP patients welcome",
+  "Oral sedation available",
   "Free on-site parking",
 ];
 
