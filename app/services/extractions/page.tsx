@@ -112,6 +112,17 @@ export default function ServicePage() {
         </div>
       </section>
 
+      <section className="border-b border-primary/10 bg-primary/5 py-8">
+        <div className="container mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 md:flex-row md:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Prefer to relax through it?</p>
+            <h2 className="mt-1 text-2xl font-bold text-foreground">Oral sedation for extractions &amp; wisdom teeth</h2>
+            <p className="mt-1 max-w-3xl text-muted-foreground">Ask us about relaxing oral sedation to stay calm and comfortable during your extraction or wisdom teeth removal.</p>
+          </div>
+          <Button asChild variant="outline" className="rounded-full"><Link href="/services/oral-sedation">Explore oral sedation</Link></Button>
+        </div>
+      </section>
+
       <section className="container mx-auto max-w-4xl px-4 py-16 md:py-24">
         <div className="prose prose-neutral dark:prose-invert prose-lg max-w-none text-muted-foreground leading-relaxed">
           <p className="mb-6">At Dr. Muller Dentistry, our primary and ultimate goal is always to save your natural teeth whenever medically possible. However, there are unfortunate situations where a tooth extraction becomes the best—or the only—option to eliminate severe pain and protect your overall systemic and oral health. </p>

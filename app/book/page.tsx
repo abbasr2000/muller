@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, Instagram, Map } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Map, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingForm } from "@/components/booking-form";
 import { SITE } from "@/lib/site-config";
@@ -149,6 +149,24 @@ export default function BookPage() {
                 <Link href="/services/emergency-dental">
                   Emergency Dental Information
                 </Link>
+              </Button>
+            </div>
+
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 relative overflow-hidden">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-full bg-primary/10 text-primary">
+                  <CreditCard className="size-5 shrink-0" aria-hidden />
+                </div>
+                <h2 className="font-semibold text-foreground">
+                  Direct billing &amp; CDCP
+                </h2>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                We offer direct billing to all major insurance providers and
+                accept the Canadian Dental Care Plan (CDCP).
+              </p>
+              <Button asChild variant="outline" className="mt-4 rounded-full">
+                <Link href="/insurance">Insurance &amp; Direct Billing</Link>
               </Button>
             </div>
 

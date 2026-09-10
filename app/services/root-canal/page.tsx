@@ -185,6 +185,16 @@ export default function RootCanalPage() {
           <Button asChild variant="outline" className="rounded-full"><Link href="/technology#microscope">Explore our technology</Link></Button>
         </div>
       </section>
+      <section className="border-b border-primary/10 bg-primary/5 py-8">
+        <div className="container mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 md:flex-row md:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Anxious about treatment?</p>
+            <h2 className="mt-1 text-2xl font-bold text-foreground">Oral sedation for a calm, comfortable visit</h2>
+            <p className="mt-1 max-w-3xl text-muted-foreground">Relaxing oral sedation is available to help you stay calm and comfortable throughout your root canal.</p>
+          </div>
+          <Button asChild variant="outline" className="rounded-full"><Link href="/services/oral-sedation">Explore oral sedation</Link></Button>
+        </div>
+      </section>
       <section className="container mx-auto max-w-6xl px-4 py-12">
         <div className="prose prose-neutral dark:prose-invert max-w-none">
           <h2 className="text-2xl font-semibold text-foreground mt-8 scroll-mt-16">

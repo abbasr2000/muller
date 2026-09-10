@@ -44,6 +44,7 @@ export type ServiceSlug =
   | "implant-supported-overdentures"
   | "all-on-4-all-on-x"
   | "cosmetic-dentistry"
+  | "oral-sedation"
   | "emergency-dental";
 
 export const SERVICES: Array<{
@@ -110,6 +111,12 @@ export const SERVICES: Array<{
       shortDescription: "Whitening, veneers, and smile makeovers in St. John's.",
     },
     {
+      slug: "oral-sedation",
+      title: "Oral Sedation",
+      shortDescription:
+        "Relaxing oral sedation to keep you calm and comfortable during extractions, wisdom teeth removal, and root canals.",
+    },
+    {
       slug: "emergency-dental",
       title: "Emergency Dental",
       shortDescription: "Same-day emergency care when you need it most.",
@@ -123,6 +130,7 @@ export const NAV_MAIN = [
   { href: "/services/root-canal", label: "Root Canal" },
   { href: "/technology", label: "Technology" },
   { href: "/map", label: "Map & Reviews" },
+  { href: "/insurance", label: "Insurance" },
   { href: "/blog", label: "Blog" },
   { href: "/book", label: "Contact" },
 ] as const;
