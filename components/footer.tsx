@@ -53,7 +53,7 @@ export const Footer = () => {
                 </span>
               </a>
               <a
-                href={`tel:${SITE.phone.replace(/\D/g, "")}`}
+                href={`tel:${SITE.phoneHref}`}
                 className="flex items-center gap-2 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded w-fit"
               >
                 <Phone className="size-4 shrink-0" aria-hidden />

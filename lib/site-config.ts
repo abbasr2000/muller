@@ -6,6 +6,11 @@ export const SITE = {
   province: "Newfoundland and Labrador",
   postalCode: "A1A 5M9",
   phone: "(709) 400-7474, Text:(709)-700-1300",
+  // Clean, single-purpose values so tel:/sms: links and labels stay correct.
+  phoneDisplay: "(709) 400-7474",
+  textDisplay: "(709) 700-1300",
+  phoneHref: "+17094007474",
+  textHref: "+17097001300",
   email: "drmullerdentistry@gmail.com",
   hours:
     "Monday to Saturday 8:30 AM – 7:00 PM, Sundays By Appointment Only. Only office in Newfoundland with 24/7 access to a dentist via SMS/calls for questions, concerns, and emergencies.",
@@ -17,6 +22,28 @@ export const SITE = {
     "https://www.google.com/maps/place/?q=place_id:ChIJFS-nL7W9DEsRgUonFckNA3Y",
   instagramUrl: "https://instagram.com/drmullerdentistry",
 } as const;
+
+// Structured opening hours for display (e.g. the location hours table).
+export const OFFICE_HOURS: Array<{ day: string; hours: string }> = [
+  { day: "Monday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Tuesday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Wednesday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Thursday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Friday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Saturday", hours: "8:30 AM – 7:00 PM" },
+  { day: "Sunday", hours: "By appointment only" },
+];
+
+// Quick trust signals shown across the site (top strip on the homepage).
+export const TRUST_POINTS: string[] = [
+  "Open Monday–Saturday",
+  "24/7 dentist access by call or text",
+  "Same-day emergencies",
+  "New patients welcome",
+  "Direct billing to all insurers",
+  "CDCP patients welcome",
+  "Free on-site parking",
+];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BOOKING FORM SETUP  ← paste your Web3Forms key on the line below.
