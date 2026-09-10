@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   MapPin,
   Star,
@@ -8,7 +7,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -107,7 +106,7 @@ export default function MapPage() {
                   Google Reviews
                 </h2>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  See what patients are saying about us on Google. Your feedback continually helps others find great care in St. John's.
+                  See what patients are saying about us on Google. Your feedback continually helps others find great care in St. John&apos;s.
                 </p>
               </div>
 

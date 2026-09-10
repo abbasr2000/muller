@@ -14,7 +14,8 @@ const localBusinessSchema = {
   email: SITE.email,
   priceRange: "$$",
   currenciesAccepted: "CAD",
-  paymentAccepted: "Cash, Credit Card, Debit Card, Insurance",
+  paymentAccepted:
+    "Cash, Credit Card, Debit Card, Insurance (direct billing), Canadian Dental Care Plan (CDCP)",
   medicalSpecialty: "Dentistry",
   sameAs: [
     SITE.instagramUrl,

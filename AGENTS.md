@@ -11,5 +11,6 @@ This is a **Next.js 16 (App Router) static marketing site** for Dr. Muller Denti
 - Typecheck: `npx tsc --noEmit`.
 
 ### Non-obvious gotchas
-- `npm run build` (`next build`) currently **fails on pre-existing `react/no-unescaped-entities` ESLint errors** in several service pages (e.g. unescaped `'` in `app/services/*/page.tsx`). These are pre-existing and unrelated to any new feature work. Use `npm run dev` to validate changes; keep new/edited files lint-clean (escape apostrophes as `&apos;`, `&` as `&amp;`, or use `{`...`}` string literals).
+- `next build` runs ESLint and **fails the build on lint errors**. The rule that bites most is `react/no-unescaped-entities`, so keep JSX text lint-clean: escape apostrophes as `&apos;` and `&` as `&amp;`, or wrap text in `{`...`}` string literals. `npm run dev` does not enforce this, so always run `npm run lint` (or `npm run build`) before pushing anything meant to deploy.
 - Content is data-driven: services come from `SERVICES` in `lib/site-config.ts`, and site navigation from `NAV_MAIN` in the same file. Adding a `ServiceSlug` + `SERVICES` entry automatically surfaces it in the services grid, footer, and sitemap. A service page must also be created at `app/services/<slug>/page.tsx`. Static (non-service) pages must be added to `app/sitemap.ts` manually.
+- Business-wide structured data (`Dentist`/`LocalBusiness` JSON-LD) lives in `components/json-ld.tsx` and is rendered once in `app/layout.tsx`. Per-page SEO (canonical, OpenGraph, FAQ/Breadcrumb/MedicalProcedure JSON-LD) is defined inside each `page.tsx`.
