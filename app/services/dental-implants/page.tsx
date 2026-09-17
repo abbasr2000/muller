@@ -14,7 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SITE } from "@/lib/site-config";
+import { CONTACT } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Dental Implants in St. John's, NL | Dr. Muller Dentistry",
@@ -92,7 +92,6 @@ const FAQS: { question: string; answer: string }[] = [
 ];
 
 export default function DentalImplantsPage() {
-  const phoneDigits = SITE.phone.replace(/\D/g, "").slice(0, 10);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -214,7 +213,7 @@ export default function DentalImplantsPage() {
                 <Link href="/book">Book a consultation</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full">
-                <a href={`tel:${phoneDigits}`}>Call (709) 400-7474</a>
+                <a href={CONTACT.call.href}>Call {CONTACT.call.display}</a>
               </Button>
             </div>
           </div>
@@ -424,7 +423,7 @@ export default function DentalImplantsPage() {
             <Button asChild variant="secondary" className="mt-7 rounded-full">
               <Link href="/book">Book a consultation</Link>
             </Button>
-            <a href={`tel:${phoneDigits}`} className="mt-4 flex items-center gap-2 text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground">
+            <a href={CONTACT.call.href} className="mt-4 flex items-center gap-2 text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground">
               <CalendarDays className="size-4" /> Or call (709) 400-7474
             </a>
           </aside>

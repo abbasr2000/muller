@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Instagram, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingForm } from "@/components/booking-form";
-import { SITE } from "@/lib/site-config";
+import { CONTACT, SITE } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Book an Appointment | Dr. Muller Dentistry St. John's NL",
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
-  const phoneDigits = SITE.phone.replace(/\D/g, "").slice(0, 10);
-
   return (
     <div className="flex flex-col">
       <section className="relative overflow-hidden border-b border-primary/10 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-20">
@@ -80,7 +78,7 @@ export default function BookPage() {
                 </a>
 
                 <a
-                  href={`tel:${phoneDigits}`}
+                  href={CONTACT.call.href}
                   className="group flex items-start gap-4 p-4 -ml-4 rounded-2xl hover:bg-primary/5 hover:text-foreground transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
                   <div className="p-3 rounded-full bg-primary/10 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">

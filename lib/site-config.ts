@@ -32,6 +32,43 @@ export const SITE = {
 // ─────────────────────────────────────────────────────────────────────────────
 export const WEB3FORMS_ACCESS_KEY = "5008b12a-8b19-4f09-be53-012da4c7f3ac";
 
+// ─────────────────────────────────────────────────────────────────────────────
+// CONTACT CHANNELS
+//
+// SITE.phone above stays as the human-readable string used in body copy and
+// directory listings. Everything a patient can click lives here instead, with
+// the display text and the dialable number kept apart — building a `tel:` by
+// stripping punctuation out of the combined string produced one unusable
+// 20-digit number (both numbers run together).
+// ─────────────────────────────────────────────────────────────────────────────
+export const CONTACT = {
+  call: {
+    label: "Call",
+    display: "(709) 400-7474",
+    href: "tel:+17094007474",
+    schema: "+1-709-400-7474",
+  },
+  text: {
+    label: "Text",
+    display: "(709) 700-1300",
+    href: "sms:+17097001300",
+    schema: "+1-709-700-1300",
+  },
+  email: {
+    label: "Email",
+    display: SITE.email,
+    href: `mailto:${SITE.email}`,
+  },
+  book: {
+    label: "Book Appointment",
+    href: "/book",
+  },
+  directions: {
+    label: "Directions",
+    href: SITE.mapUrl,
+  },
+} as const;
+
 export type ServiceSlug =
   | "root-canal"
   | "general-dentistry"

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle2, CalendarClock, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SITE, SERVICES, WEB3FORMS_ACCESS_KEY } from "@/lib/site-config";
+import { CONTACT, SERVICES, WEB3FORMS_ACCESS_KEY } from "@/lib/site-config";
 
 const TIME_BLOCKS = [
   "Morning (8:30 AM – 11:00 AM)",
@@ -13,8 +13,6 @@ const TIME_BLOCKS = [
   "Evening (5:00 PM – 7:00 PM)",
 ] as const;
 
-// Phone number, digits only, for the tel: fallback link.
-const PHONE_DIGITS = SITE.phone.replace(/\D/g, "").slice(0, 10);
 const PHONE_DISPLAY = "(709) 400-7474";
 
 const fieldClasses =
@@ -87,7 +85,7 @@ export const BookingForm = () => {
           Thanks for reaching out. Our team will call or text you shortly to
           confirm your appointment time. For anything urgent, call us directly
           at{" "}
-          <a href={`tel:${PHONE_DIGITS}`} className="font-semibold text-primary">
+          <a href={CONTACT.call.href} className="font-semibold text-primary">
             {PHONE_DISPLAY}
           </a>
           .
@@ -281,7 +279,7 @@ export const BookingForm = () => {
       <p className="mt-4 text-center text-xs text-muted-foreground">
         This sends a request — we&apos;ll call or text to confirm your time.
         Prefer to talk now? Call{" "}
-        <a href={`tel:${PHONE_DIGITS}`} className="font-medium text-primary">
+        <a href={CONTACT.call.href} className="font-medium text-primary">
           {PHONE_DISPLAY}
         </a>
         .

@@ -1,4 +1,4 @@
-import { SITE } from "@/lib/site-config";
+import { CONTACT, SITE } from "@/lib/site-config";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -10,8 +10,25 @@ const localBusinessSchema = {
   description:
     "Dr. Muller Dentistry offers root canal therapy, general dentistry, cleanings, and full dental care in St. John's, Newfoundland and Labrador.",
   url: "https://drmullerdentistry.com",
-  telephone: SITE.phone,
+  telephone: CONTACT.call.schema,
   email: SITE.email,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "reservations",
+      telephone: CONTACT.call.schema,
+      email: SITE.email,
+      areaServed: "CA",
+      availableLanguage: "English",
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "emergency",
+      telephone: CONTACT.text.schema,
+      areaServed: "CA",
+      availableLanguage: "English",
+    },
+  ],
   priceRange: "$$",
   currenciesAccepted: "CAD",
   paymentAccepted: "Cash, Credit Card, Debit Card, Insurance",

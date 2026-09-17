@@ -187,7 +187,7 @@ export default function RootCanalPage() {
       </section>
       <section className="container mx-auto max-w-6xl px-4 py-12">
         <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <h2 className="text-2xl font-semibold text-foreground mt-8 scroll-mt-16">
+          <h2 className="text-2xl font-semibold text-foreground mt-8 scroll-mt-32">
             What Is a Root Canal?
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">
@@ -199,7 +199,7 @@ export default function RootCanalPage() {
             pain while preventing further infection.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
+          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-32">
             Why You Might Need a Root Canal
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">
@@ -251,7 +251,7 @@ export default function RootCanalPage() {
             before we begin.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
+          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-32">
             Does a Root Canal Hurt?
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">
@@ -263,7 +263,7 @@ export default function RootCanalPage() {
             pain management.
           </p>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
+          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-32">
             After Your Root Canal
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">
@@ -344,7 +344,7 @@ export default function RootCanalPage() {
             </details>
           </div>
 
-          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-16">
+          <h2 className="text-2xl font-semibold text-foreground mt-10 scroll-mt-32">
             Why Choose Us for Root Canal Therapy in St. John&apos;s
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-2">

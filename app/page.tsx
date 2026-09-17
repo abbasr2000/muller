@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin, Phone, Stethoscope, Star, Instagram, ExternalLink } from "lucide-react";
+import { ArrowRight, MapPin, MessageSquareText, Phone, Stethoscope, Star, Instagram, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { SITE, SERVICES } from "@/lib/site-config";
+import { CONTACT, SITE, SERVICES } from "@/lib/site-config";
 
 export default function HomePage() {
   const otherServices = SERVICES.filter((s) => !s.featured).slice(0, 4);
@@ -77,11 +77,18 @@ export default function HomePage() {
             </span>
           </a>
           <a
-            href={`tel:${SITE.phone.replace(/\D/g, "")}`}
+            href={CONTACT.call.href}
             className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
           >
             <Phone className="size-5 shrink-0" aria-hidden />
-            {SITE.phone}
+            Call {CONTACT.call.display}
+          </a>
+          <a
+            href={CONTACT.text.href}
+            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
+          >
+            <MessageSquareText className="size-5 shrink-0" aria-hidden />
+            Text {CONTACT.text.display}
           </a>
         </div>
       </section>

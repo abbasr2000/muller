@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
-import { SITE, NAV_MAIN, SERVICES } from "@/lib/site-config";
+import { MapPin, Phone, Mail, Clock, Instagram, MessageSquareText } from "lucide-react";
+import { CONTACT, SITE, NAV_MAIN, SERVICES } from "@/lib/site-config";
 
 export const Footer = () => {
   return (
@@ -53,11 +53,18 @@ export const Footer = () => {
                 </span>
               </a>
               <a
-                href={`tel:${SITE.phone.replace(/\D/g, "")}`}
+                href={CONTACT.call.href}
                 className="flex items-center gap-2 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded w-fit"
               >
                 <Phone className="size-4 shrink-0" aria-hidden />
-                {SITE.phone}
+                Call {CONTACT.call.display}
+              </a>
+              <a
+                href={CONTACT.text.href}
+                className="flex items-center gap-2 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded w-fit"
+              >
+                <MessageSquareText className="size-4 shrink-0" aria-hidden />
+                Text {CONTACT.text.display}
               </a>
               <a
                 href={`mailto:${SITE.email}`}

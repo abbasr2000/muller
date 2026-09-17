@@ -5,7 +5,8 @@ import { Toaster } from "sonner";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
-import { MobileCallBar } from "@/components/mobile-call-bar";
+import { TopCtaBar } from "@/components/top-cta-bar";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -96,12 +97,17 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Header />
+        {/* Contact bar + navigation travel together and stay pinned to the
+            top of the viewport as the page scrolls. */}
+        <div className="sticky top-0 z-50 w-full">
+          <TopCtaBar />
+          <Header />
+        </div>
         <main id="main-content" className="flex-1">
           {children}
         </main>
         <Footer />
-        <MobileCallBar />
+        <MobileCtaBar />
         <Toaster position="top-center" richColors />
         {/* Google Tag Manager */}
         <Script

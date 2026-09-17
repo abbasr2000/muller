@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Phone, AlertCircle, Clock, ShieldCheck, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SITE } from "@/lib/site-config";
+import { CONTACT } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Emergency Dental Care | St. John's NL | Dr. Muller Dentistry",
@@ -124,9 +124,9 @@ export default function EmergencyDentalPage() {
               size="lg"
               className="rounded-full bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/30 px-8 text-lg h-14"
             >
-              <a href={`tel:${SITE.phone.replace(/\D/g, "")}`}>
+              <a href={CONTACT.call.href}>
                 <Phone className="mr-2 size-5 animate-pulse" />
-                Call Now: {SITE.phone}
+                Call Now: {CONTACT.call.display}
               </a>
             </Button>
             <Button
@@ -500,9 +500,9 @@ export default function EmergencyDentalPage() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4 relative z-10">
             <Button asChild size="lg" className="rounded-full bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/20 px-8 h-14 text-lg">
-              <a href={`tel:${SITE.phone.replace(/\D/g, "")}`}>
+              <a href={CONTACT.call.href}>
                 <Phone className="mr-2 size-5" />
-                Call {SITE.phone}
+                Call {CONTACT.call.display}
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-14">
