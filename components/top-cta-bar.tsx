@@ -1,12 +1,57 @@
 import Link from "next/link";
 import { CalendarCheck, MapPin, MessageSquareText, Phone } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { CONTACT, SITE } from "@/lib/site-config";
 
-// Shared look for every segment in the bar. On phones the segments split the
-// width evenly with hairline dividers; from md up they shrink to their content
-// and sit on the right of the bar.
+// Shared look for every segment. On phones the three segments split the width
+// evenly with hairline dividers and stack their label over the number; from md
+// up they shrink to their content and read as one line on the right.
 const segment =
-  "flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap px-2 text-xs font-semibold leading-none transition-colors hover:bg-white/15 active:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/80 border-l border-white/20 first:border-l-0 sm:text-sm md:flex-none md:gap-2 md:border-l-0 md:px-4";
+  "flex min-w-0 flex-1 items-center justify-center gap-1 whitespace-nowrap px-1 font-semibold sm:gap-1.5 sm:px-1.5 transition-colors hover:bg-white/15 active:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/80 border-l border-white/20 first:border-l-0 md:flex-none md:gap-2 md:border-l-0 md:px-4 md:text-sm";
+
+type Cta = {
+  key: string;
+  href: string;
+  Icon: LucideIcon;
+  label: string;
+  detail: string;
+  ariaLabel: string;
+  /** Routed with next/link rather than a plain anchor. */
+  internal?: boolean;
+  /** Extra classes that lift one action above the others. */
+  emphasis?: string;
+};
+
+const CTAS: Cta[] = [
+  {
+    key: "call",
+    href: CONTACT.call.href,
+    Icon: Phone,
+    label: "Call",
+    detail: CONTACT.call.display,
+    ariaLabel: `Call Dr. Muller Dentistry at ${CONTACT.call.display}`,
+  },
+  {
+    key: "text",
+    href: CONTACT.text.href,
+    Icon: MessageSquareText,
+    label: "Text",
+    detail: CONTACT.text.display,
+    ariaLabel: `Text Dr. Muller Dentistry at ${CONTACT.text.display}`,
+  },
+  {
+    key: "book",
+    href: CONTACT.book.href,
+    Icon: CalendarCheck,
+    label: "Book",
+    detail: "Appointment",
+    ariaLabel: "Book an appointment online",
+    internal: true,
+    // Reads as a filled pill on desktop, a lighter segment on phones.
+    emphasis:
+      "bg-white/15 md:my-1.5 md:rounded-full md:bg-background md:px-5 md:text-primary md:hover:bg-background/90",
+  },
+];
 
 /**
  * Always-visible contact bar that rides above the header. Paired with the
@@ -16,8 +61,8 @@ const segment =
 export const TopCtaBar = () => {
   return (
     <div className="w-full bg-primary text-primary-foreground">
-      <div className="container mx-auto flex h-10 max-w-7xl items-stretch justify-between px-0 md:h-11 md:px-4">
-        {/* Address + hours: desktop only, where there is room for it. */}
+      <div className="container mx-auto flex h-12 max-w-7xl items-stretch justify-between px-0 md:h-11 md:px-4">
+        {/* Address + directions: wide screens only, where there is room. */}
         <a
           href={CONTACT.directions.href}
           target="_blank"
@@ -31,39 +76,26 @@ export const TopCtaBar = () => {
         </a>
 
         <div className="flex flex-1 items-stretch md:flex-none md:items-center md:gap-1">
-          <a
-            href={CONTACT.call.href}
-            className={segment}
-            aria-label={`Call Dr. Muller Dentistry at ${CONTACT.call.display}`}
-          >
-            <Phone className="size-4 shrink-0" aria-hidden />
-            <span className="md:hidden">Call</span>
-            <span className="hidden md:inline">
-              Call {CONTACT.call.display}
-            </span>
-          </a>
-
-          <a
-            href={CONTACT.text.href}
-            className={segment}
-            aria-label={`Text Dr. Muller Dentistry at ${CONTACT.text.display}`}
-          >
-            <MessageSquareText className="size-4 shrink-0" aria-hidden />
-            <span className="md:hidden">Text</span>
-            <span className="hidden md:inline">
-              Text {CONTACT.text.display}
-            </span>
-          </a>
-
-          <Link
-            href={CONTACT.book.href}
-            className={`${segment} bg-white/15 md:my-1.5 md:rounded-full md:bg-background md:px-5 md:text-primary md:hover:bg-background/90`}
-            aria-label="Book an appointment online"
-          >
-            <CalendarCheck className="size-4 shrink-0" aria-hidden />
-            <span className="md:hidden">Book</span>
-            <span className="hidden md:inline">Book Appointment</span>
-          </Link>
+          {CTAS.map(({ key, href, Icon, label, detail, ariaLabel, internal, emphasis }) => {
+            const Tag = internal ? Link : "a";
+            return (
+              <Tag
+                key={key}
+                href={href}
+                aria-label={ariaLabel}
+                className={`${segment}${emphasis ? ` ${emphasis}` : ""}`}
+              >
+                <Icon className="size-4 shrink-0" aria-hidden />
+                {/* Phones: label above the number. md+: a single line. */}
+                <span className="flex flex-col items-start leading-tight md:flex-row md:items-center md:gap-1.5 md:leading-none">
+                  <span className="text-[0.8125rem] md:text-sm">{label}</span>
+                  <span className="text-[0.625rem] font-medium tabular-nums text-primary-foreground/85 md:text-sm md:font-semibold md:text-inherit">
+                    {detail}
+                  </span>
+                </span>
+              </Tag>
+            );
+          })}
         </div>
       </div>
     </div>
